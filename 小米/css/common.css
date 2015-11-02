@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+/* 清除默认样式 */
+body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd,ol,input,select,i,b,strong,img,em{ margin:0;padding:0;}
+
+a{ text-decoration:none;}
+li{ list-style:none;}
+i,em{ font-style:normal;}
+strong,b{ font-weight:normal;}
+input{ border:none;outline:none;}
+/*清除默认样式结束 */
+
+
+/*通用样式 */
+.wrap{ width:1240px;margin:0 auto;}
+.fl{ float:left;display:inline;}
+.fr{ float:right;display:inline;}
+p,a,sapn,i,b,input{color:#8c8c8c;font-size:12px}
+.clearFix:after{ content:'';clear:both;display:block;}
+.clearFix{ zoom:1;}
+.colff4a00{ color:#ff4a00;}
+body{ font-family:'微软雅黑';}
+a:hover{ color:#ff4a00;}
+img{ border:none;}
+	img{}
+	<href
+/*通用样式结束 */

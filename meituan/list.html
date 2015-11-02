@@ -1,0 +1,2089 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>列表页 - www.zhinengshe.com</title>
+<link href="css/common.css" rel="stylesheet">
+<link href="css/list.css" rel="stylesheet">
+<link href="css/layout1.css" rel="stylesheet"/>
+<script>
+window.onload=function(){
+	var oHff_box_hd=document.getElementById('hff_box_hd');
+	var oClose=document.getElementById('close');
+	
+	oClose.onclick=function(){
+		oHff_box_hd.style.display='none';
+		}
+	
+};
+
+</script> 
+</head>
+
+<body>
+	<!--头部 -->
+	<div class="wtj_login_list">
+    	<div class="wtj980 clearFix">
+        	<ul class="wtj_login_list_left fl">
+            	<li>
+                	<a href="javascript:;">收藏美团</a>
+                </li>
+                <li>
+                	<a class="wtj_login" href="javascript:;">登录</a>
+                </li>
+                <li class="wtj_reg">
+                	<a href="javascript:;">注册</a>
+                </li>
+                <li class="wtj_phone clearFix">
+                	<i class="fl"></i><a class="fl" href="javascript:;">手机美团</a>
+                </li>
+            </ul>
+            <ul class="wtj_login_list_right fr clearFix">
+            	<a class="wtj_my fl" href="javascript:;">我的订单</a>
+            	<li class="clearFix">
+                	<a href="javascript:;">我的美团<i></i></a>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;">最近浏览<i></i></a>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;">购物车0件<i></i></a>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;">联系客服<i></i></a>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;">我是商家<i></i></a>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;">更多<i></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="wtj_logosearch wtj980 clearFix">
+    	<div class="wtj_logo fl">
+        </div>
+        <div class="wtj_area fl">
+        	<h3>北京</h3>
+            <span>切换城市</span>
+        </div>
+         <div class="wtj_search_box fl">
+            <div class="wtj_search clearFix">
+                <ul class="wtj_search_left fl">
+                    <li>团购</li>
+                </ul>
+                <input class="fl wtj_txt" type="text">
+                <input class="wtj_search_right fl" type="button" value="搜素">
+            </div>
+            <p><a href="javascript:;">电影</a><a href="javascript:;">自助餐</a><a href="javascript:;">KTV</a><a href="javascript:;">生日蛋糕</a><a href="javascript:;">烤肉</a><a href="javascript:;">烤鱼</a><a href="javascript:;">按摩</a><a href="javascript:;">汉丽轩</a><a href="javascript:;">电影票</a><a href="javascript:;">蛋糕</a>
+        </div>
+        <div class="wtj_after_sales fl clearFix">
+        	<a class="img1" href="javascript:;"></a>
+            <a class="img2" href="javascript:;"></a>
+            <a class="img3" href="javascript:;"></a>
+        </div>
+    </div>
+    <div class="wtj_menu wtj980 clearFix">
+    	<div class="wtj_menu_left fl">
+        全部分类
+        </div>
+        <ul class="wtj_menu_middle fl clearFix">
+        	<li>
+        		<a href="javascript:;">首页</a>
+            </li>
+            <li>
+        		<a href="javascript:;">身边团购</a>
+            </li>
+            <li>
+        		<a href="javascript:;">身边外卖</a>
+            </li>
+            <li>
+        		<a href="javascript:;">今日新单</a>
+            </li>
+            <li>
+        		<a href="javascript:;">购物</a>
+            </li>
+            <li>
+        		<a href="javascript:;">商家点评</a>
+            </li>
+            <li>
+        		<a href="javascript:;">大牌街</a>
+            </li> 
+        </ul>
+    </div>
+    
+    
+    <!-- 列表-->
+    <div class="hff_box wrap980">
+    	<div class="hff_box_hd wrap980" id="hff_box_hd">
+        	<img src="images/hff_01.jpg" alt="" />
+            <span id="close">&times;</span>
+        </div>
+        <div class="hff_box_foot">
+        	<div class="hff_box_foot_top ">
+            	<ul class="clearFix">
+                	<li>
+                    	<span>热门：</span>
+                    </li>
+                    <li>
+                    	<a class="hff_colf76" href="javascript:;">代金券</a>
+                    </li>
+                    <li>
+                    	<a class="hff_colf76" href="javascript:;">电影</a>
+                    </li>
+                    <li>
+                    	<a class="hff_colf76" href="javascript:;">经济型酒店</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">KTV</a>
+                    </li>
+                    <li>
+                    	<a class="colf76" href="javascript:;">火锅</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">烤肉</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">足疗按摩</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">游泳</a>
+                        <span>/</span>
+                        <a href="javascript:;">水上乐园</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">景点门票</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">本地</a>
+                        <span>/</span>
+                        <a href="javascript:;">周边游</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">美发</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">西餐</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">香锅烤鱼</a>
+                    </li>
+                    <li>
+                    	<a href="javascript:;">日本料理</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hff_w948">
+                <div class="hff_box_foot_center">
+                        <a href="javascript:;">全部</a>
+                        <span>&gt;</span>
+                        <a class="hff_foot" href="javascript:;">美食</a>
+                </div>
+                <div class="hff_box_foot_bottom clearFix">
+                    <div class="hff_box_foot_bottom_list1 hff_h99">
+                    	<h4>分类:</h4>
+                        <div class="hff_list1_NO1">
+                            <ul class="clearFix">
+                                <li>
+                                    <a href="javascript:;">全部</a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">自助餐
+                                	 <span>843</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">火锅
+                                	 <span>2512</span>
+                                     </a>
+                                </li>
+                                <li class="active">
+                              		 <a  href="javascript:;">烤肉
+                                	 <span>1289</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a class="hff_colf76" href="#">烧烤/烤串
+                                	 <span class="hff_colf76">720</span>
+                                     </a>
+                                </li> 
+                                <li>
+                              		 <a href="javascript:;">麻辣烫
+                                	 <span>258</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">西餐
+                                	 <span>877</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">自助餐
+                                	 <span>843</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">日本料理
+                                	 <span>304</span>
+                                     </a>
+                                </li>
+                                 <li>
+                              		 <a href="javascript:;">蛋糕
+                                	 <span>1027</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">香锅烤鱼
+                                	 <span>1032</span>
+                                     </a>
+                                </li> 
+                                <li>
+                              		 <a href="javascript:;">聚餐宴请
+                                	 <span>1898</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">川湘菜
+                                	 <span>1362</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">韩国料理
+                                	 <span>324</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">鲁菜/北京菜
+                                	 <span>827</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">小吃快餐
+                                	 <span>2001</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">甜点饮品
+                                	 <span>1007</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">海鲜
+                                	 <span>388</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">粤港菜
+                                	 <span>412</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">咖啡酒吧茶馆
+                                	 <span>784</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">东南亚菜
+                                	 <span>139</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">江浙菜
+                                	 <span>263</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">东北菜
+                                	 <span>307</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">云贵菜
+                                	 <span>109</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">台湾菜/客家菜
+                                	 <span>60</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">素食
+                                	 <span>32</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">新疆菜
+                                	 <span>77</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">食品饮料
+                                	 <span>227</span>
+                                     </a>
+                                </li>
+                                   <li>
+                              		 <a href="javascript:;">汤/粥/炖菜
+                                	 <span>88</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">蒙餐
+                                	 <span>40</span>
+                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hff_box_foot_bottom_list1 hff_h78">
+                    	<h4>区域:</h4>
+                        <div class="hff_list1_NO1">
+                            <ul class="clearFix">
+                                <li class="active1">
+                                    <a href="javascript:;">全部</a>
+                                </li>
+                                <li class="hff_colf76">
+                              		 <a class="hff_colf76 hff_ditie" href="javascript:;">地铁附近
+                                	 <span class="hff_colf76">753</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">朝阳区
+                                	 <span>339</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a  href="javascript:;">海淀区
+                                	 <span>317</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">丰台区
+                                	 <span>138</span>
+                                     </a>
+                                </li> 
+                                <li>
+                              		 <a href="javascript:;">西城区
+                                	 <span>99</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">东城西
+                                	 <span>53</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">昌平区
+                                	 <span>104</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">石景山区
+                                	 <span>64</span>
+                                     </a>
+                                </li>
+                                 <li>
+                              		 <a href="javascript:;">通州区
+                                	 <span>70</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">大兴区
+                                	 <span>110</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">顺义区
+                                	 <span>44</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">房山区
+                                	 <span>30</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">密云县
+                                	 <span>5</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">怀柔区
+                                	 <span>4</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">延庆区
+                                	 <span>3</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">门头沟
+                                	 <span>2</span>
+                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hff_box_foot_bottom_list1 hff_h51">
+                    	<h4>价格:</h4>
+                        <div class="hff_list1_NO1">
+                            <ul class="clearFix">
+                                <li class="active1">
+                                    <a href="#">全部</a>
+                                </li>
+                                <li class="hff_colf76">
+                              		 <a href="#">20元以下
+                                	 <span>118</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">20-50元
+                                	 <span>285</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a  href="javascript:;">50-80元
+                                	 <span>287</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">80-120元
+                                	 <span>234</span>
+                                     </a>
+                                </li> 
+                                <li>
+                              		 <a href="javascript:;">200-500元
+                                	 <span>121</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">500-800元
+                                	 <span>10</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">800以上
+                                	 <span>16</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">石景山区
+                                	 <span>64</span>
+                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hff_box_foot_bottom_list1 hff_h51 hff_borno">
+                    	<h4>人数:</h4>
+                        <div class="hff_list1_NO1">
+                            <ul class="clearFix">
+                                <li class="active1">
+                                    <a href="javascript:;">全部</a>
+                                </li>
+                                <li class="hff_colf76">
+                              		 <a href="javascript:;">单人餐
+                                	 <span>190</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">双人餐
+                                	 <span>282</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a  href="javascript:;">3-4人
+                                	 <span>322</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">5-6人
+                                	 <span>125</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">7-8人
+                                	 <span>33</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">9-10元
+                                	 <span>28</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">10人以上
+                                	 <span>17</span>
+                                     </a>
+                                </li>
+                                <li>
+                              		 <a href="javascript:;">其它
+                                	 <span>471</span>
+                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- 主体-->
+    <div class="ld_head_box clearFix">
+	<p class="fl ld_active">默认排序</p>
+    <p class="fl ld_Sales">销量</p>
+    <p class="fl ld_Price">价格</p>
+    <p class="fl ld_Sort">排序</p>
+    <p class="fl ld_time">发布时间</p>
+    <span class="fl">免预约</span>
+    <span class="fl">代金券</span>
+    <span class="fl">极速退</span>
+</div>
+	<div class="ld_box clearFix ld_w928">
+                <div class="fl ld_box_left">
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld4.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld6.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld1.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_list_box">
+                            <ul class="ld_list clearFix">
+                                <li class="fl ld_list_none">
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld3.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                                    
+                                <li class="fl ld_list_none">
+                                    <img class="ld_noorder" src="images/ld7.png" alt="" />
+                                    <a href="javascript"> <img class="ld_goods" src="images/ld2.jpg" alt=""/></a>
+                                    <a href="javascript">
+                                        <div class="ld_goods_name">【北京】 铁木真<b>自助</b>城</div>
+                                        <div class="ld_goods_intro">单人<b>自助</b>，提供免费wifi</div>
+                                     </a>
+                                      <div class="clearFix ld_goods_sale">
+                                            <strong class="fl">￥52</strong>
+                                            <p class="fl">门店价<span>￥68</span></p>
+                                      </div>
+                                      <div class="clearFix ld_goods_comment">
+                                            <p class="fl">已售 <b>70834</b></p>
+                                            <a class="fr" href="#">6292人评价</a>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ld_load ">加载中</div>
+                            <div class="ld_num clearFix">
+                                <p class="fl active">1</p>
+                                <p class="fl">2</p>
+                                <p class="fl">3</p>
+                                <p class="fl">4</p>
+                                <p class="fl">5</p>
+                                <p class="fl">6</p>
+                                <p class="fl">7</p>
+                                <p class="fl last">下一页</p>
+                            </div>
+                        
+                 </div>
+                 <div class="tbq_side_box fr">
+        <div class="tbq_side">
+            <a href="javascript:;" class="tbq_phone"></a>
+            <a href="javascript:;" class="tbq_cateye"></a>
+        </div>
+        <div class="tbq_side_hot">
+        	<h4>热门专题</h4>
+            <a href="javascript:;"><img src="images/tbq_silde6.jpg" alt="" title="每周二秒杀等你来"/></a>
+        </div>
+        <div class="tbq_favorite">
+        	<h4>猜你喜欢</h4>
+            <div class="tbq_side_list_box">
+                <div class="tbq_favorite_list">
+                    <a href="javascript:;" class="tbq_pos_f"><img src="images/tbq_silde7.jpg" alt=""/><div class="tbq_pos">1</div></a>
+                    <p><a href="javascript:;">【西单】掉渣缘掉渣饼掉渣缘掉渣饼掉渣缘掉渣缘</a></p>
+                    <b>&yen;4.9</b><span>已售</span><i>87502</i>
+                    
+                </div>
+                <div class="tbq_favorite_list">
+                    <a href="javascript:;" class="tbq_pos_f"><img src="images/tbq_silde7.jpg" alt=""/><div class="tbq_pos">2</div></a>
+                    <p><a href="javascript:;">【西单】掉渣缘掉渣饼掉渣缘掉渣饼掉渣缘掉渣缘</a></p>
+                    <b>&yen;4.9</b><span>已售</span><i>87502</i>
+                    
+                </div>
+                <div class="tbq_favorite_list">
+                    <a href="javascript:;" class="tbq_pos_f"><img src="images/tbq_silde7.jpg" alt=""/><div class="tbq_pos">3</div></a>
+                    <p><a href="javascript:;">【西单】掉渣缘掉渣饼掉渣缘掉渣饼掉渣缘掉渣缘</a></p>
+                    <b>&yen;4.9</b><span>已售</span><i>87502</i>
+                    
+                </div>
+                <div class="tbq_favorite_list">
+                    <a href="javascript:;" class="tbq_pos_f"><img src="images/tbq_silde7.jpg" alt=""/><div class="tbq_pos">4</div></a>
+                    <p><a href="javascript:;">【西单】掉渣缘掉渣饼掉渣缘掉渣饼掉渣缘掉渣缘</a></p>
+                    <b>&yen;4.9</b><span>已售</span><i>87502</i>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="tbq_raffle">
+        	<p>几米投影电视眼镜  <a href="javascript:;">进行中</a></p>
+            <p>8锅臭臭锅免费吃 <a href="javascript:;">进行中</a></p>
+            <p>《闺蜜》观影礼包 <a href="javascript:;">进行中</a></p>
+            
+        </div>
+        <div class="tbq_job">
+            <a href="javascript:;" class="tbq_job_tit"></a> 
+            <div class="tbq_job_main">
+                <p class="tbq_job_more"><a href="javascript:;">点击查看招聘职位》</a></p>
+                <p class="tbq_job_Opinion"><a href="javascript:;">有您的建议，美团才会更好》</a></p>
+                <p class="tbq_job_favor"><a href="javascript:;">希望在美团组织团购么？</a> <br>
+    <a href="javascript:;">请提交团购信息</a></p>
+            </div>
+        </div>
+      	<div class="tbq_visit">
+        	<div class="tbq_visit_tit clearFix">
+            	<h4 class="fl">最近浏览</h4>
+                <a href="javascript:;" class="fr">清空</a>
+            </div>
+        	<ul class="tbq_visit_main">
+            	<li class="clearFix">
+                	<a href="javascript:;" class="fl"><img src="images/tbq_pic1.jpg" alt=""/></a>
+                    <div class="fr">
+                    	<a href="javascript:;">LAKERS两人披萨西餐自助餐</a>
+                        <p><span>￥58</span><i>148</i></p>
+                    </div>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;" class="fl"><img src="images/tbq_pic1.jpg" alt=""/></a>
+                    <div class="fr">
+                    	<a href="javascript:;">LAKERS两人披萨西餐自助餐</a>
+                        <p><span>￥58</span><i>148</i></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    	
+    </div>
+</div>
+   <div class="ld_city">
+                <div class="ld_city_head clearFix">
+                    <a class="fl ld_active" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                </div>
+                <div class="ld_city_list clearFix">
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                    <a class="fl" href="javascript">城市团购</a>
+                   
+                </div>
+        </div> 
+    
+    <!--尾部 -->
+    <div class="wtj_foot ">
+    	<ul class="wtj_foot_top wtj980 clearFix">
+        	<li>
+            	<h2>获取更新</h2>
+                <a href="javascript:;">邮件订阅</a>
+                <a href="javascript:;">iPhone/Android</a>
+                <a href="javascript:;">美团QQ空间</a>
+                <a href="javascript:;">美团新浪微博</a>
+                <a href="javascript:;">sitemap</a>
+                <a href="javascript:;">RSS订阅</a>
+            </li>
+            <li>
+            	<h2>获取更新</h2>
+                <a href="javascript:;">邮件订阅</a>
+                <a href="javascript:;">iPhone/Android</a>
+                <a href="javascript:;">美团QQ空间</a>
+                <a href="javascript:;">美团新浪微博</a>
+                <a href="javascript:;">sitemap</a>
+                <a href="javascript:;">RSS订阅</a>
+            </li>
+            <li>
+            	<h2>获取更新</h2>
+                <a href="javascript:;">邮件订阅</a>
+                <a href="javascript:;">iPhone/Android</a>
+                <a href="javascript:;">美团QQ空间</a>
+                <a href="javascript:;">美团新浪微博</a>
+                <a href="javascript:;">sitemap</a>
+                <a href="javascript:;">RSS订阅</a>
+            </li>
+            <li>
+            	<h2>获取更新</h2>
+                <a href="javascript:;">邮件订阅</a>
+                <a href="javascript:;">iPhone/Android</a>
+                <a href="javascript:;">美团QQ空间</a>
+                <a href="javascript:;">美团新浪微博</a>
+                <a href="javascript:;">sitemap</a>
+                <a href="javascript:;">RSS订阅</a>
+            </li>
+            <li class="wtj_tel">
+            	<p>退款、退换货、查看美团券</p>
+                <a href="javascript:;">参考教程，轻松搞定</a>
+                <p>客服电话：400-660-5335</p>
+                <p>服务时间：每天9:00-22:00</p>
+            </li>
+        </ul>
+        <p class="wtj_foot_p">©2015美团网团购 meituan.com 京ICP证070791号 京公网安备11010502025545号 电子公告服务规则</p>
+        <div class="wtj_foot_b clearFix">
+        	<a href="javascript:;">
+            	<img src="images/wtj_foot_img1.png" alt=""/>
+            </a>
+            <a href="javascript:;">
+            	<img src="images/wtj_foot_img2.png" alt=""/>
+            </a>
+            <a href="javascript:;">
+            	<img src="images/wtj_foot_img3.png" alt=""/>
+            </a>
+            <a href="javascript:;">
+            	<img src="images/wtj_foot_img4.png" alt=""/>
+            </a>
+            <a href="javascript:;">
+            	<img src="images/wtj_foot_img5.png" alt=""/>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+                    
+                    
+                    
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

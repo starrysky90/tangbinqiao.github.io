@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap{margin:0 auto;width:980px;}
+h1 a{display: block; background:url(../images/base.vdd88fa40.png) no-repeat 0 -78px;width:82px;height:54px;margin-top:42px;text-indent:-9999em;}
+
+.cont{margin-top: 35px;}
+
+.cont_right{margin-right: 125px;width:260px;}
+h2{font-weight: normal;height:16px;}
+h2 span{font-size: 14px;color:#666;padding-top: 2px;}
+h2 a{font-size: 12px;color:#666;background: url(../images/zxylogin2.png) no-repeat right;padding-right: 12px;margin-right: 4px;}
+
+.user_box{position: relative;margin-top: 10px;}
+.icon_user{background: url(../images/zxylogin3.png) no-repeat;width:18px;height:17px;position: absolute;top: 9px;left: 9px;}
+.u_text{width:226px;height:34px;border: 1px solid #aaa;font-size: 14px;padding-left: 32px;}
+.pass_box{position: relative;margin-top: 16px;}
+.icon_pass{background: url(../images/zxylogin4.png) no-repeat;width:16px;height:18px;position: absolute;top: 7px;left: 9px;}
+.p_text{width:226px;height:34px;border: 1px solid #aaa;font-size: 14px;padding-left: 32px;}
+.rem_login{font-size: 12px;color:#333;margin-top: 8px;height:18px;}
+.rem_login span{padding-top: 5px;margin-left: 3px;}
+.rem{margin-right: 4px;}
+.rem_login a{color:#2bb8aa;padding-top:3px;margin-right: 5px;}
+.login_btn{margin-top: 18px;}
+.login_btn .btn{background: url(../images/zxylogin7.png) no-repeat;width:260px;height:37px;color:#fff;font-size: 14px; font-weight: bold;}
+.cont_right p{font-size: 14px;color:#666;margin-top: 22px;}
+.cont_right p a{color:#2bb8aa;}
+.lod_type{font-size:12px;color:#999;margin-top:54px;}
+.lod_type p{font-size:12px;color:#999;}
+.lod_type ul li{margin-top: 10px;}
+.lod_type ul .mode1{width:33px;background: url(../images/zxyqq.png) no-repeat 0;padding-left: 21px;}
+.lod_type ul .mode2{width:45px;background: url(../images/zxyzfb.png) no-repeat 0;padding-left: 20px;}
+.lod_type ul .mode3{width:34px;background: url(../images/zxywb.png) no-repeat 0;padding-left: 21px;}
+.lod_type ul .mode4{background: url(../images/zxybd.png) no-repeat 0;padding-left: 20px;}
+.lod_type ul .mode5{width:30px;background: url(../images/zxy360.png) no-repeat 0;padding-left: 21px;}
+.lod_type ul .more{color:#2bb8aa;background: url(../images/zxygd.png) no-repeat right;padding-right:8px;}
+.ft{height: 31px; border-top:1px solid #eee;border-bottom:1px solid #eee;margin-top: 72px;padding-top: 17px;}
+/*底部开始*/
+.ft ul{width:594px;}
+.ft ul li{height:14px;border-right:1px solid #eee;padding:0 16px; font-size: 12px;}
+.ft ul li a{color:#999;}
+.ft ul .first{padding-left: 0;}
+.ft ul .last{padding-right: 0;border-right: none;}
+.ft a img{margin-top:-5px;}
+.copyright p{margin-top: 24px;font-size: 12px;color:#999;}
+.copyright p a{color:#999;}
+
+.scan{position: absolute;top:74px;right:60px;}
+.pen{position: absolute;top:510px;right:130px;}

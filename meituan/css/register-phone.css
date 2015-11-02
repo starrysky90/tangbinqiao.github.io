@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+.wrap{width:980px;margin: 0 auto;}
+.phone_email{width: 978px;height:448px;border:1px solid #e8e8e8;margin:10px 0 65px 0; }
+.reg_mode{width: 858px;height:36px;border-bottom: 1px solid #d9e8e8;margin:28px 60px 0 60px;}
+.reg_mode .email{height:35px;width:161px;line-height: 36px;text-align: center; border:1px solid #d9e8e8;border-bottom: none; background: #e9f6f6;margin-left: 10px;}
+.reg_mode .email span{background:url(../images/zxyregister8.png) no-repeat 0;padding-left: 23px; font-size:14px; font-weight: bold;color: #2bb8aa;}
+.reg_mode .phone{height:36px;width:158px;line-height: 36px;text-align: center;background: #1aa29e;margin-left: 7px; position: relative;}
+.reg_mode .phone span{background:url(../images/zxyregister9.png) no-repeat 0;padding-left: 18px; font-size:14px; font-weight: bold;color: #fff;}
+.reg_mode .phone i{background:url(../images/zxyregister3.png) no-repeat;width: 10px;height:5px;position: absolute;top:36px;left: 74px;}
+.reg_mode p{line-height: 36px;font-size: 14px;color:#000;}
+.reg_mode p a{color:#2bb8aa;}
+
+.cont{margin-top:28px;}
+.cont .input_box{height:36px;line-height: 36px;}
+.cont .input_box p{width:129px;font-size: 14px;color:#333;}
+.cont .input_box input{width:258px;height: 34px;border: 1px solid #aaa;margin: 0 8px 0 10px;}
+.cont .input_box b{background: url(../images/zxyregister10.png) no-repeat 0;padding-left: 22px;font-size: 12px;color:#666;}
+.cont .get_btn{margin:3px 0 4px 140px;}
+.get_btn .btn{height:23px;width: 142px;background:url(../images/zxyregister11.png)font-size: 12px;color: #333;}
+.t_password{margin-bottom: 16px;}
+.cont .grade{margin:6px 0 4px 140px;}
+.cont .grade span{width:85px;height:20px;line-height: 20px;text-align: center;background: #eee;color:#fff;font-size: 12px;margin-right: 2px;}
+.cont .enroll_btn{margin-left: 140px;margin-top: 16px;}
+.enroll_btn .btn{height:36px;width: 193px;background: #2db5a7; border-bottom: 1px solid #0d7b71;border-radius: 3px;font-size: 14px;font-weight: bold;color: #fff;}
+.enroll_btn p a{font-size: 12px;color:#2bb8aa;}
