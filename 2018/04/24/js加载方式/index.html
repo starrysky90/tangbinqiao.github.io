@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>TBQ的博客</title>
+  <title>js加载方式 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TBQ的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js加载方式">
+<meta property="og:url" content="http://yoursite.com/2018/04/24/js加载方式/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta property="og:description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
+<meta property="og:updated_time" content="2018-04-24T06:21:35.598Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TBQ的博客">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:title" content="js加载方式">
+<meta name="twitter:description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -156,92 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-vue实现按需加载的三种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-js加载方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/24/vue实现按需加载的三种方式/">vue实现按需加载的三种方式</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/24/vue实现按需加载的三种方式/" class="archive-article-date">
-  	<time datetime="2018-04-24T03:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-vue异步组件技术"><a href="#1-vue异步组件技术" class="headerlink" title="1. vue异步组件技术"></a>1. vue异步组件技术</h2><p>. vue-router配置路由， 使用vue的<a href="https://cn.vuejs.org/v2/guide/components.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6" target="_blank" rel="noopener">异步组件</a>技术，可以实现按需加载<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">"promisedemo"</span>,</span><br><span class="line">    name:<span class="string">"PromiseDemo"</span>,</span><br><span class="line">    component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'../components/PromiseDemo'</span>], resolve)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2018/04/24/vue实现按需加载的三种方式/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/24/vue实现按需加载的三种方式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js加载方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/24/js加载方式/">js加载方式</a>
+    <h1 class="article-title" itemprop="name">
+      js加载方式
     </h1>
   
 
@@ -257,12 +181,38 @@
         <h2 id="1-同步加载"><a href="#1-同步加载" class="headerlink" title="1.同步加载"></a>1.同步加载</h2><p>我们平时使用最多的一种方式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://yourdomain.com/script.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵塞，所以一般建把&lt;script&gt;标签放在&lt;body&gt;结尾处，这样尽可能减少页面阻塞。</p>
 <h2 id="2-异步加载"><a href="#2-异步加载" class="headerlink" title="2.异步加载"></a>2.异步加载</h2><p>异步加载又叫非阻塞加载， 浏览器在下载执行js的同时， 还会继续进行后续页面的处理</p>
-<h3 id="1-动态创建script标签"><a href="#1-动态创建script标签" class="headerlink" title="1.动态创建script标签"></a>1.动态创建script标签</h3>
-        
-          <a class="article-more-a" href="/2018/04/24/js加载方式/#more">more >></a>
-        
+<h3 id="1-动态创建script标签"><a href="#1-动态创建script标签" class="headerlink" title="1.动态创建script标签"></a>1.动态创建script标签</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent)&#123;</span><br><span class="line">        <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>,insertScript);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, insertScript, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> insertScript = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ga = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        ga.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">        ga.src = <span class="string">"http://xxx.script.js"</span></span><br><span class="line">        <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">        s.parentNode.insertBefore(ga, s);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="2-defer和async"><a href="#2-defer和async" class="headerlink" title="2. defer和async"></a>2. defer和async</h3><p>defer属性： IE4.0就出现， 浏览器会并行下载其他有defer属性的script,而不会阻塞页面后续处理， 注： 所有的defer脚本必须保证按顺序执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>async属性： HTML5新属性，不会阻塞页面加载， 脚本将在下载后尽快执行，但是不能保证按顺序执行， 他们将在onload事件之前完成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Firefox 3.6、Opera 10.5、IE 9和最新的Chrome和Safari都支持async属性。可以同时使用async和defer，这样IE 4之后的所有IE都支持异步加载。</p>
+<h3 id="3-其他方法"><a href="#3-其他方法" class="headerlink" title="3. 其他方法"></a>3. 其他方法</h3><p>XHR Injection | XHR Eval | Script In Iframe | document.write</p>
+<p>XHR Injection:通过XMLHttpRequest来获取javascript,然后创建一个script元素插入到DOM结构中，ajax请求成功后设置script元素插入到DOM结构中。ajax请求成功后设置scirpt.text为请求成功的返回responseText<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getXMLHttp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj ;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> xmlHTTP = getXMLHttp();</span><br><span class="line">xmlHTTP.open(<span class="string">'GET'</span>, <span class="string">"//ajax/url"</span>);</span><br><span class="line">xmlHTTP.send();</span><br><span class="line">XMLHTTP.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xmlHTTP.readyState === <span class="number">4</span> &amp;&amp; xmlHTTP.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        script.text= xmlHTTP.responseText;</span><br><span class="line">        docuent.getElemenentsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>XHR Eval:与XHR Injection对responseText的执行方式不同， 直接把responseText放在eval函数里面执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//获取XMLHttpRequest对象，考虑兼容性。</span></span><br><span class="line"><span class="keyword">var</span> getXmlHttp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">        obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        obj = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;;  </span><br><span class="line"><span class="comment">//采用Http请求get方式;open()方法的第三个参数表示采用异步(true)还是同步(false)处理</span></span><br><span class="line"><span class="keyword">var</span> xmlHttp = getXmlHttp();</span><br><span class="line">xmlHttp.open(<span class="string">"GET"</span>, <span class="string">"http://cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"</span>, <span class="literal">true</span>);</span><br><span class="line">xmlHttp.send(); </span><br><span class="line">xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState == <span class="number">4</span> &amp;&amp; xmlHttp.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="built_in">eval</span>(xmlHttp.responseText);</span><br><span class="line">        <span class="comment">//alert($);//可以弹出$,表明JS已经加载进来。click事件放在其它出会出问题，应该是还没加载进来</span></span><br><span class="line">        $(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert($(<span class="keyword">this</span>).text());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -282,16 +232,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/24/js加载方式/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/24/js加载方式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/04/24/vue实现按需加载的三种方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue实现按需加载的三种方式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mongodb</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -311,86 +329,14 @@
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/hello-world/">mongodb</a>
-    </h1>
   
 
-        
-        <a href="/2017/12/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-12-19T09:44:08.815Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mongodb命令大全"><a href="#mongodb命令大全" class="headerlink" title="mongodb命令大全"></a>mongodb命令大全</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">db.movides.find().<span class="built_in">help</span>() - show DBCursor <span class="built_in">help</span></span><br><span class="line">db.movides.bulkWrite( operations, &lt;optional params&gt; ) - bulk execute write operations, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.count( query = &#123;&#125;, &lt;optional params&gt; ) - count the number of documents that matches the query, optional parameters are: <span class="built_in">limit</span>, skip, hint, maxTimeMS</span><br><span class="line">db.movides.copyTo(newColl) - duplicates collection by copying all documents to newColl; no indexes are copied.</span><br><span class="line">db.movides.convertToCapped(maxBytes) - calls &#123;convertToCapped:<span class="string">'movides'</span>, size:maxBytes&#125;&#125; <span class="built_in">command</span></span><br><span class="line">db.movides.createIndex(keypattern[,options])</span><br><span class="line">db.movides.createIndexes([keypatterns], &lt;options&gt;)</span><br><span class="line">db.movides.dataSize()</span><br><span class="line">db.movides.deleteOne( filter, &lt;optional params&gt; ) - delete first matching document, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.deleteMany( filter, &lt;optional params&gt; ) - delete all matching documents, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.distinct( key, query, &lt;optional params&gt; ) - e.g. db.movides.distinct( <span class="string">'x'</span> ), optional parameters are: maxTimeMS</span><br><span class="line">db.movides.drop() drop the collection</span><br><span class="line">db.movides.dropIndex(index) - e.g. db.movides.dropIndex( <span class="string">"indexName"</span> ) or db.movides.dropIndex( &#123; <span class="string">"indexKey"</span> : 1 &#125; )</span><br><span class="line">db.movides.dropIndexes()</span><br><span class="line">db.movides.ensureIndex(keypattern[,options]) - DEPRECATED, use createIndex() instead</span><br><span class="line">db.movides.explain().<span class="built_in">help</span>() - show explain <span class="built_in">help</span></span><br><span class="line">db.movides.reIndex()</span><br><span class="line">db.movides.find([query],[fields]) - query is an optional query filter. fields is optional <span class="built_in">set</span> of fields to return.e.g. db.movides.find( &#123;x:77&#125; , &#123;name:1, x:1&#125; )</span><br><span class="line">db.movides.find(...).count()</span><br><span class="line">db.movides.find(...).<span class="built_in">limit</span>(n)</span><br><span class="line">db.movides.find(...).skip(n)</span><br><span class="line">db.movides.find(...).sort(...)</span><br><span class="line">db.movides.findOne([query], [fields], [options], [readConcern])</span><br><span class="line">db.movides.findOneAndDelete( filter, &lt;optional params&gt; ) - delete first matching document, optional parameters are: projection, sort, maxTimeMS</span><br><span class="line">db.movides.findOneAndReplace( filter, replacement, &lt;optional params&gt; ) - replace first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument</span><br><span class="line">db.movides.findOneAndUpdate( filter, update, &lt;optional params&gt; ) - update first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument</span><br><span class="line">db.movides.getDB() get DB object associated with collection</span><br><span class="line">db.movides.getPlanCache() get query plan cache associated with collection</span><br><span class="line">db.movides.getIndexes()</span><br><span class="line">db.movides.group( &#123; key : ..., initial: ..., reduce : ...[, cond: ...] &#125; )</span><br><span class="line">db.movides.insert(obj)</span><br><span class="line">db.movides.insertOne( obj, &lt;optional params&gt; ) - insert a document, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.insertMany( [objects], &lt;optional params&gt; ) - insert multiple documents, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.mapReduce( mapFunction , reduceFunction , &lt;optional params&gt; )</span><br><span class="line">db.movides.aggregate( [pipeline], &lt;optional params&gt; ) - performs an aggregation on a collection; returns a cursor</span><br><span class="line">db.movides.remove(query)</span><br><span class="line">db.movides.replaceOne( filter, replacement, &lt;optional params&gt; ) - replace the first matching document, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.renameCollection( newName , &lt;dropTarget&gt; ) renames the collection.</span><br><span class="line">db.movides.runCommand( name , &lt;options&gt; ) runs a db <span class="built_in">command</span> with the given name <span class="built_in">where</span> the first param is the collection name</span><br><span class="line">db.movides.save(obj)</span><br><span class="line">db.movides.stats(&#123;scale: N, indexDetails: <span class="literal">true</span>/<span class="literal">false</span>, indexDetailsKey: &lt;index key&gt;, indexDetailsName: &lt;index name&gt;&#125;)</span><br><span class="line">db.movides.storageSize() - includes free space allocated to this collection</span><br><span class="line">db.movides.totalIndexSize() - size <span class="keyword">in</span> bytes of all the indexes</span><br><span class="line">db.movides.totalSize() - storage allocated <span class="keyword">for</span> all data and indexes</span><br><span class="line">db.movides.update( query, object[, upsert_bool, multi_bool] ) - instead of two flags, you can pass an object with fields: upsert, multi</span><br><span class="line">db.movides.updateOne( filter, update, &lt;optional params&gt; ) - update the first matching document, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.updateMany( filter, update, &lt;optional params&gt; ) - update all matching documents, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.validate( &lt;full&gt; ) - SLOW</span><br><span class="line">db.movides.getShardVersion() - only <span class="keyword">for</span> use with sharding</span><br><span class="line">db.movides.getShardDistribution() - prints statistics about data distribution <span class="keyword">in</span> the cluster</span><br><span class="line">db.movides.getSplitKeysForChunks( &lt;maxChunkSize&gt; ) - calculates split points over all chunks and returns splitter <span class="keyword">function</span></span><br><span class="line">db.movides.getWriteConcern() - returns the write concern used <span class="keyword">for</span> any operations on this collection, inherited from server/db <span class="keyword">if</span> <span class="built_in">set</span></span><br><span class="line">db.movides.setWriteConcern( &lt;write concern doc&gt; ) - sets the write concern <span class="keyword">for</span> writes to the collection</span><br><span class="line">db.movides.unsetWriteConcern( &lt;write concern doc&gt; ) - unsets the write concern <span class="keyword">for</span> writes to the collection</span><br></pre></td></tr></table></figure>
-<h3 id="mongodb聚合方式使用"><a href="#mongodb聚合方式使用" class="headerlink" title="mongodb聚合方式使用"></a>mongodb聚合方式使用</h3><p>最近一直在用mongodb，有时候会需要用到统计，在网上查了一些资料，最适合用的就是用aggregate，以下介绍一下自己运用的心得，别人写过的我就不过多描述了，大家一搜能搜索到N多一样的，我写一下我的总结。</p>
-<blockquote>
-<p>操作符简介<br>$project：包含、排除、重命名和显示字段<br>$match：查询，需要同find()一样的参数<br>$limit：限制结果数量<br>$skip：忽略结果的数量<br>$sort：按照给定的字段排序结果<br>$group：按照给定表达式组合结果<br>$unwind：分割嵌入数组到自己顶层文件</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
+  
 
   
+
   
 
 
@@ -413,8 +359,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
