@@ -158,6 +158,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-单向数据流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/02/vue-单向数据流/">vue-单向数据流</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/02/vue-单向数据流/" class="archive-article-date">
+  	<time datetime="2018-05-02T02:24:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。<br>另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。<br>我们一般会在下面两种情况下去修改prop中数据：</p>
+<ol>
+<li>Prop作为初始值传入后，子组件想把它当作<strong>局部数据</strong>来用 </li>
+<li>Prop作为原始数据传入后，由子组件处理成<strong>其他数据</strong>输出</li>
+</ol>
+<p>对于以上两种情况，争取的应对方式为:</p>
+<h3 id="定义一个局部变量，-并用prop的值初始化它"><a href="#定义一个局部变量，-并用prop的值初始化它" class="headerlink" title="定义一个局部变量， 并用prop的值初始化它"></a>定义一个局部变量， 并用prop的值初始化它</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'initialCounter'</span>],</span><br><span class="line">data:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        counter:this.initialCounter</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h3 id="定义一个计算属性，-处理prop的值并返回"><a href="#定义一个计算属性，-处理prop的值并返回" class="headerlink" title="定义一个计算属性， 处理prop的值并返回"></a>定义一个计算属性， 处理prop的值并返回</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'size'</span>],</span><br><span class="line">computed:&#123;</span><br><span class="line">    normalizedSize:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this.size.trim().toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>注意在javascript中对象和数组是引用类型，指向同一个内存空间，如果prop是一个对象或数组， 在子组件内部改变它会影响父组件的状态</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/02/vue-单向数据流/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-flex-grow、flex-shrink、flex-basis学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -401,84 +485,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/19/hello-world/">mongodb</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-12-19T09:44:08.815Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mongodb命令大全"><a href="#mongodb命令大全" class="headerlink" title="mongodb命令大全"></a>mongodb命令大全</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">db.movides.find().<span class="built_in">help</span>() - show DBCursor <span class="built_in">help</span></span><br><span class="line">db.movides.bulkWrite( operations, &lt;optional params&gt; ) - bulk execute write operations, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.count( query = &#123;&#125;, &lt;optional params&gt; ) - count the number of documents that matches the query, optional parameters are: <span class="built_in">limit</span>, skip, hint, maxTimeMS</span><br><span class="line">db.movides.copyTo(newColl) - duplicates collection by copying all documents to newColl; no indexes are copied.</span><br><span class="line">db.movides.convertToCapped(maxBytes) - calls &#123;convertToCapped:<span class="string">'movides'</span>, size:maxBytes&#125;&#125; <span class="built_in">command</span></span><br><span class="line">db.movides.createIndex(keypattern[,options])</span><br><span class="line">db.movides.createIndexes([keypatterns], &lt;options&gt;)</span><br><span class="line">db.movides.dataSize()</span><br><span class="line">db.movides.deleteOne( filter, &lt;optional params&gt; ) - delete first matching document, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.deleteMany( filter, &lt;optional params&gt; ) - delete all matching documents, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.distinct( key, query, &lt;optional params&gt; ) - e.g. db.movides.distinct( <span class="string">'x'</span> ), optional parameters are: maxTimeMS</span><br><span class="line">db.movides.drop() drop the collection</span><br><span class="line">db.movides.dropIndex(index) - e.g. db.movides.dropIndex( <span class="string">"indexName"</span> ) or db.movides.dropIndex( &#123; <span class="string">"indexKey"</span> : 1 &#125; )</span><br><span class="line">db.movides.dropIndexes()</span><br><span class="line">db.movides.ensureIndex(keypattern[,options]) - DEPRECATED, use createIndex() instead</span><br><span class="line">db.movides.explain().<span class="built_in">help</span>() - show explain <span class="built_in">help</span></span><br><span class="line">db.movides.reIndex()</span><br><span class="line">db.movides.find([query],[fields]) - query is an optional query filter. fields is optional <span class="built_in">set</span> of fields to return.e.g. db.movides.find( &#123;x:77&#125; , &#123;name:1, x:1&#125; )</span><br><span class="line">db.movides.find(...).count()</span><br><span class="line">db.movides.find(...).<span class="built_in">limit</span>(n)</span><br><span class="line">db.movides.find(...).skip(n)</span><br><span class="line">db.movides.find(...).sort(...)</span><br><span class="line">db.movides.findOne([query], [fields], [options], [readConcern])</span><br><span class="line">db.movides.findOneAndDelete( filter, &lt;optional params&gt; ) - delete first matching document, optional parameters are: projection, sort, maxTimeMS</span><br><span class="line">db.movides.findOneAndReplace( filter, replacement, &lt;optional params&gt; ) - replace first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument</span><br><span class="line">db.movides.findOneAndUpdate( filter, update, &lt;optional params&gt; ) - update first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument</span><br><span class="line">db.movides.getDB() get DB object associated with collection</span><br><span class="line">db.movides.getPlanCache() get query plan cache associated with collection</span><br><span class="line">db.movides.getIndexes()</span><br><span class="line">db.movides.group( &#123; key : ..., initial: ..., reduce : ...[, cond: ...] &#125; )</span><br><span class="line">db.movides.insert(obj)</span><br><span class="line">db.movides.insertOne( obj, &lt;optional params&gt; ) - insert a document, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.insertMany( [objects], &lt;optional params&gt; ) - insert multiple documents, optional parameters are: w, wtimeout, j</span><br><span class="line">db.movides.mapReduce( mapFunction , reduceFunction , &lt;optional params&gt; )</span><br><span class="line">db.movides.aggregate( [pipeline], &lt;optional params&gt; ) - performs an aggregation on a collection; returns a cursor</span><br><span class="line">db.movides.remove(query)</span><br><span class="line">db.movides.replaceOne( filter, replacement, &lt;optional params&gt; ) - replace the first matching document, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.renameCollection( newName , &lt;dropTarget&gt; ) renames the collection.</span><br><span class="line">db.movides.runCommand( name , &lt;options&gt; ) runs a db <span class="built_in">command</span> with the given name <span class="built_in">where</span> the first param is the collection name</span><br><span class="line">db.movides.save(obj)</span><br><span class="line">db.movides.stats(&#123;scale: N, indexDetails: <span class="literal">true</span>/<span class="literal">false</span>, indexDetailsKey: &lt;index key&gt;, indexDetailsName: &lt;index name&gt;&#125;)</span><br><span class="line">db.movides.storageSize() - includes free space allocated to this collection</span><br><span class="line">db.movides.totalIndexSize() - size <span class="keyword">in</span> bytes of all the indexes</span><br><span class="line">db.movides.totalSize() - storage allocated <span class="keyword">for</span> all data and indexes</span><br><span class="line">db.movides.update( query, object[, upsert_bool, multi_bool] ) - instead of two flags, you can pass an object with fields: upsert, multi</span><br><span class="line">db.movides.updateOne( filter, update, &lt;optional params&gt; ) - update the first matching document, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.updateMany( filter, update, &lt;optional params&gt; ) - update all matching documents, optional parameters are: upsert, w, wtimeout, j</span><br><span class="line">db.movides.validate( &lt;full&gt; ) - SLOW</span><br><span class="line">db.movides.getShardVersion() - only <span class="keyword">for</span> use with sharding</span><br><span class="line">db.movides.getShardDistribution() - prints statistics about data distribution <span class="keyword">in</span> the cluster</span><br><span class="line">db.movides.getSplitKeysForChunks( &lt;maxChunkSize&gt; ) - calculates split points over all chunks and returns splitter <span class="keyword">function</span></span><br><span class="line">db.movides.getWriteConcern() - returns the write concern used <span class="keyword">for</span> any operations on this collection, inherited from server/db <span class="keyword">if</span> <span class="built_in">set</span></span><br><span class="line">db.movides.setWriteConcern( &lt;write concern doc&gt; ) - sets the write concern <span class="keyword">for</span> writes to the collection</span><br><span class="line">db.movides.unsetWriteConcern( &lt;write concern doc&gt; ) - unsets the write concern <span class="keyword">for</span> writes to the collection</span><br></pre></td></tr></table></figure>
-<h3 id="mongodb聚合方式使用"><a href="#mongodb聚合方式使用" class="headerlink" title="mongodb聚合方式使用"></a>mongodb聚合方式使用</h3><p>最近一直在用mongodb，有时候会需要用到统计，在网上查了一些资料，最适合用的就是用aggregate，以下介绍一下自己运用的心得，别人写过的我就不过多描述了，大家一搜能搜索到N多一样的，我写一下我的总结。</p>
-<blockquote>
-<p>操作符简介<br>$project：包含、排除、重命名和显示字段<br>$match：查询，需要同find()一样的参数<br>$limit：限制结果数量<br>$skip：忽略结果的数量<br>$sort：按照给定的字段排序结果<br>$group：按照给定表达式组合结果<br>$unwind：分割嵌入数组到自己顶层文件</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/19/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -580,15 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
