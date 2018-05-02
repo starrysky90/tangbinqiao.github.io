@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/05/02/vue-单向数据流/index.html">
 <meta property="og:site_name" content="TBQ的博客">
 <meta property="og:description" content="Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。我们一般会在下面两种情况下去修改prop中数据：  Prop作为初始值传入后，子组件想把它">
-<meta property="og:updated_time" content="2018-05-02T02:43:41.862Z">
+<meta property="og:updated_time" content="2018-05-02T02:48:12.541Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-单向数据流">
 <meta name="twitter:description" content="Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。我们一般会在下面两种情况下去修改prop中数据：  Prop作为初始值传入后，子组件想把它">
@@ -183,6 +183,7 @@
 <li>Prop作为初始值传入后，子组件想把它当作<strong>局部数据</strong>来用 </li>
 <li>Prop作为原始数据传入后，由子组件处理成<strong>其他数据</strong>输出</li>
 </ol>
+<a id="more"></a>
 <p>对于以上两种情况，争取的应对方式为:</p>
 <h3 id="定义一个局部变量，-并用prop的值初始化它"><a href="#定义一个局部变量，-并用prop的值初始化它" class="headerlink" title="定义一个局部变量， 并用prop的值初始化它"></a>定义一个局部变量， 并用prop的值初始化它</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'initialCounter'</span>],</span><br><span class="line">data:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        counter:this.initialCounter</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre><h3 id="定义一个计算属性，-处理prop的值并返回"><a href="#定义一个计算属性，-处理prop的值并返回" class="headerlink" title="定义一个计算属性， 处理prop的值并返回"></a>定义一个计算属性， 处理prop的值并返回</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'size'</span>],</span><br><span class="line">computed:&#123;</span><br><span class="line">    normalizedSize:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this.size.trim().toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -292,6 +293,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/05/02/native-sync修饰符/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue-.native,.sync修饰符
+        
+      </div>
+    </a>
   
   
     <a href="/2018/04/26/flex-grow、flex-shrink、flex-basis学习/" id="article-nav-older" class="article-nav-link-wrap">
@@ -434,6 +444,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">.native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">.sync</a>
               </li>
             
             <div class="clearfix"></div>
