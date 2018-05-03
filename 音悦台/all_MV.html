@@ -1,0 +1,746 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="css/all_MV.css" rel="stylesheet"/>
+<link href="css/common.css" rel="stylesheet"/>
+<script src="js/jquery-1.7.2.js"/></script>
+<script>
+$(function(){
+	$('.banner li').mouseover(function(){
+		$('.banner li').removeClass('active');
+		$(this).addClass('active');
+		
+		$('.banner .slider').removeClass('show');
+		$('.banner .slider').eq($(this).index()).addClass('show');
+		
+		});
+		
+	$('.section_tit1 li').mouseover(function(){
+		$('.section_tit1 li a').removeClass('active1');
+		$(this).children().addClass('active1');
+		
+		$('.section_cont_box .section_cont1').hide();
+		$('.section_cont_box .section_cont1').eq($(this).index()).show();
+		});
+	
+	$('.select').hover(function (){
+		$(this).find('.subnav').stop().slideDown();
+		},function(){
+			$(this).find('.subnav').hide();
+		});
+		
+	$('.covinent_minibar').click(function(){
+		
+		$('.covinent_minibar').animate({'width':'0'});
+		$('.convinent_exbar').css('display','block').animate({'right':'-2px'});
+		});
+	$('.convinent_top_r').click(function(){
+		
+		$('.covinent_minibar').animate({'width':'34px'});
+		$('.convinent_exbar').animate({'right':'-252px'});
+		});
+	});
+</script>
+</head>
+
+<body>
+	<!-- nav-->
+	<div class="nav">
+    	<div class="wrap clearFix">
+        	<h1 class="fl">音悦台</h1>
+            <dl class="fl clearFix">
+            	<dt class="fl select"><a href="javascript:;">我的家</a>
+                	<ul class="subnav">
+                    	<li><a href="javascript:;">我的悦单</a></li>
+                        <li><a href="javascript:;">我的MV</a></li>
+                        <li><a href="javascript:;">我的日志</a></li>
+                        <li><a href="javascript:;">我的相册</a></li>
+                        <li><a href="javascript:;">我的饭团</a></li>
+                        <li><a href="javascript:;">我的悦友</a></li>
+                        <li><a href="javascript:;">我的展示页</a></li>
+                    </ul>
+                </dt>
+                <span class="fl"></span>
+                <dd class="fl"><a href="javascript:;">首页</a></dd>
+                <dd class="fl select">
+                	<a href="javascript:;" class="colcf9">MV</a>
+                    <ul class="subnav">
+                    	<li><a href="javascript:;">MV频道</a></li>
+                        <li><a href="javascript:;">推荐MV</a></li>
+                        <li><a href="javascript:;">全部MV</a></li>
+                    </ul>
+                </dd>
+                <dd class="fl select"><a href="javascript:;">悦榜</a><ul class="subnav">
+                    	<li><a href="javascript:;">推荐悦单</a></li>
+                        <li><a href="javascript:;">约旦达人</a></li>
+                        <li><a href="javascript:;">全部悦单</a></li>
+                    </ul></dd>
+                <dd class="fl select"><a href="javascript:;">V榜</a><ul class="subnav">
+                    	<li><a href="javascript:;">聚焦</a></li>
+                        <li><a href="javascript:;">打榜动态</a></li>
+                        <li><a href="javascript:;">周榜top10</a></li>
+                        <li><a href="javascript:;">月榜top20</a></li>
+                    </ul></dd>
+                <dd class="fl"><a href="javascript:;">饭团</a></dd>
+                <dd class="fl"><a href="javascript:;">商城</a></dd>
+                <dd class="fl select"><a href="javascript:;">应用</a><ul class="subnav">
+                    	<li><a href="javascript:;">移动客户端</a></li>
+                        <li><a href="javascript:;">音悦tv</a></li>
+                        <li><a href="javascript:;">桌面客户端</a></li>
+                    </ul></dd>
+                <dd class="fl select"><a href="javascript:;">节目</a><ul class="subnav">
+                    	<li><a href="javascript:;">FAN&bull;club</a></li>
+                        <li><a href="javascript:;">推荐MV</a></li>
+                    </ul></dd>
+                <dd class="fl select"><a href="javascript:;">Fan Club</a><ul class="subnav">
+                    	<li><a href="javascript:;">MV频道</a></li>
+                        <li><a href="javascript:;">推荐MV</a></li>
+                        <li><a href="javascript:;">全部MV</a></li>
+                    </ul></dd>
+                <dd class="fl nav_last"><a href="javascript:;">好有趣</a>
+                	<i></i>
+                </dd>
+            </dl>
+            <form action="" method="get">
+                <div class="search fl">
+                    <input type="text" placeholder="pitbull 《celebrate》 happy birthday" />				
+                    <input type="button" value=""/>
+                </div>
+            </form>
+            <div class="login fr clearFix">
+            	<a href="javascript:;" class="fl vip">VIP会员</a>
+                <a href="javascript:;" class="fl sign">登陆</a>
+                <span class="fl"></span>
+                <a href="javascript:;" class="fl register">注册</a>
+            </div>
+        </div>
+    </div>
+   	<!--content -->
+    <div class="header clearFix">
+    	<h1 class="fl">MV频道</h1>
+        <ul class="fr clearFix">
+        	<li><a href="javascript:;" class="active">MV频道</a></li>
+            <li><a href="javascript:;">推荐MV</a></li>
+            <li><a href="javascript:;">全部MV</a></li>
+        </ul>
+    </div>
+    <div class="cont wrap clearFix">
+    	<div class="cont_recommend fl">
+        	<div class="cont_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr">更多··</a>
+                    </li>
+            </ul>
+        </div> 
+        <div class="cont_recommend fl">
+            <div class="cont_recommend_tit vip_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+                <li class="active clearFix">
+                    <a href="javascript:;" class="fl left">
+                        <img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                        <p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr">更多··</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_music_classify fl">
+        	<div class="cont_music_classify_main">
+            	<h3>音乐分类</h3>
+                <div class="classify_list">
+                	<h4>视频分类</h4>
+                    <a href="javascript:;">官方版</a>
+                    <a href="javascript:;">现场版</a>
+                    <a href="javascript:;">演唱会</a>
+                    <a href="javascript:;">饭团视频</a>
+                    <a href="javascript:;">字幕版</a>
+                    <a href="javascript:;">竖屏视频</a>
+                </div>
+                <div class="classify_list">
+                	<h4>视频标签</h4>
+                    <a href="javascript:;">超清</a>
+                    <a href="javascript:;">高清</a>
+                    <a href="javascript:;">打榜</a>
+                    <a href="javascript:;">首播</a>
+                    <a href="javascript:;">音悦人</a>
+                    <a href="javascript:;">竖屏视频</a>
+                </div>
+                <div class="classify_list">
+                	<h4>艺术流派</h4>
+                    <a href="javascript:;">民谣</a>
+                    <a href="javascript:;">古典</a>
+                    <a href="javascript:;">R&B</a>
+                    <a href="javascript:;">电影原声</a>
+                    <a href="javascript:;">流行</a>
+                    <a href="javascript:;">轻音乐</a>
+                    <a href="javascript:;">古典</a>
+                    <a href="javascript:;">R&B</a>
+                    <a href="javascript:;">电影原声</a>
+                    <a href="javascript:;">流行</a>
+                    <a href="javascript:;">轻音乐</a>
+                </div>
+            </div>
+             <a href="javascript:;" class="advertise"><img src="images/banner9.jpg" alt=""/></a><strong></strong>
+        </div>
+        <div class="cont_recommend fl">
+        	<div class="cont_recommend_tit hot_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr">更多··</a>
+                    </li>
+            </ul>
+        </div> 
+        <div class="cont_recommend fl">
+            <div class="cont_recommend_tit update_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+                <li class="active clearFix">
+                    <a href="javascript:;" class="fl left">
+                        <img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                        <p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr">更多··</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+            <div class="cont_recommend_tit musican_recommend_tit"></div>
+            <ul class="cont_recommend_ul musican_recommend_ul">
+                <li class="clearFix">
+                	<a href="javascript:;" class="fl"><img src="images/banner10.jpg" alt=""/></a>
+                    <dl class="fr">
+                    	<dt class="clearFix"><a href="javascript:;" class="fl singer">Jason Chen</a><a href="javascript:;" class="fr jion">加入饭团</a><span class="fr"></span></dt>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;" class="fl"><img src="images/banner11.jpg" alt=""/></a>
+                    <dl class="fr">
+                    	<dt class="clearFix"><a href="javascript:;" class="fl singer">Jason Chen</a><a href="javascript:;" class="fr jion">加入饭团</a><span class="fr"></span></dt>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Sam Tsue 中文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="clearFix">
+                	<a href="javascript:;" class="fl"><img src="images/banner12.jpg" alt=""/></a>
+                    <dl class="fr">
+                    	<dt class="clearFix"><a href="javascript:;" class="fl singer">赌鬼乐队</a><a href="javascript:;" class="fr jion">加入饭团</a><span class="fr"></span></dt>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">你见过这样的都护吗</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                        <dd class="clearFix">
+                        	<a href="javascript:;" class="fl">Only One 中英文字幕</a>
+                            <i class="fr"></i>
+                            <b class="fr"></b>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+        	<div class="cont_recommend_tit decade70_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div> 
+        <div class="cont_recommend fl">
+            <div class="cont_recommend_tit decade80_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+                <li class="active clearFix">
+                    <a href="javascript:;" class="fl left">
+                        <img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                        <p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+            <div class="cont_recommend_tit decade90_recommend_tit"></div>
+            <ul class="cont_recommend_ul">
+                <li class="active clearFix">
+                    <a href="javascript:;" class="fl left">
+                        <img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                        <p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+        	<div class="cont_recommend_tit clearFix festival_recommend_tit">
+            	<a href="javascript:;" class=" fr">更换节日</a>
+                <i class="fr">毕业之歌</i>
+            </div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+        	<div class="cont_recommend_tit clearFix mood_recommend_tit">
+            	<a href="javascript:;" class=" fr">更换心情</a>
+                <i class="fr">欢快</i>
+            </div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div>
+        <div class="cont_recommend fl">
+        	<div class="cont_recommend_tit clearFix weather_recommend_tit">
+            	<a href="javascript:;" class=" fr">更换天气</a>
+                <i class="fr">晴</i>
+            </div>
+            <ul class="cont_recommend_ul">
+            	<li class="active clearFix">
+                	<a href="javascript:;" class="fl left">
+                    	<img src="images/-M-3e90b981fa1c6714f5a0d66cfc8d1dec_120x67.jpg" alt=""/>
+                        <i class="pos_label">1</i>
+                    </a>
+                    <div class="fl">
+                    	<p class="msg"><a href="javascript:;">唔闸（UZA）官方版</a></p>
+                        <p class="name"><a href="javascript:;">--SNH48</a></p>
+                    </div>
+                    <span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">2</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">1</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">3</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">4</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">5</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">6</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">7</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">8</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="clearFix"><b class="fl">9</b><a href="javascript:;" class="fl li_center">卡西莫多的礼物呜呜呜呜</a><a href="javascript:;" class="fr li_right">--华晨宇</a>
+                	<span class="pos_collection"></span>
+                </li>
+                <li class="cont_recommend_last clearFix bgf7faf9">
+                    <span class="fl">全部播放</span>
+                    <a href="javascript:;" class="fr change">换一换</a>
+                    </li>
+            </ul>
+        </div> 
+        
+    </div>
+    
+    <!--footer -->
+    <div class="footer">
+    	<div class="ul_box">
+        	<ul class="clearFix">
+            	<li class="fl"><a href="javascript:;">关于我们</a></li>
+                <li class="fl"><a href="javascript:;">人才招聘</a></li>
+                <li class="fl"><a href="javascript:;">联系我们</a></li>
+                <li class="fl"><a href="javascript:;">友情链接</a></li>
+                <li class="fl"><a href="javascript:;">版权声明</a></li>
+                <li class="fl"><a href="javascript:;">客服中心</a></li>
+            </ul>
+        </div>
+        <div class="footer_msg clearFix">
+            <p class="copyright">copyright © 2009 - 2014 yinyuetai.com 广播电视节目制作经营 许可证编号(京)字第1891号 |<a href="javascript:;">京网文[2014]2037-287号</a>|<a href="javascript:;">网络视听许可证0110413号</a></p>
+            <p class="icp">京ICP备11024134号-1 | 京ICP证060716号 | 京公网安备110105014900 | 出版物经营许可证 新出发京零字第朝130062号 | 增值电信业务经营许可证B2-20140501</p>
+    </div>
+    </div>
+    <div class="covinent_minibar">
+    	<div class="convinent_minibar_top"></div>
+    	<div class="convinent_minibar_bottom"></div>
+    </div> 
+    <div class="convinent_exbar">
+    	<div class="convinent_top clearFix">
+        	<span class="fr convinent_top_r">></span>
+        </div>
+        <div class="convinent_bottom"></div>
+    </div> 
+</body>
+</html>
