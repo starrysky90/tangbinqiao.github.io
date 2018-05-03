@@ -158,6 +158,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue-单元测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/03/vue-单元测试/">vue-单元测试</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/03/vue-单元测试/" class="archive-article-date">
+  	<time datetime="2018-05-03T08:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="配置和工具"><a href="#配置和工具" class="headerlink" title="配置和工具"></a>配置和工具</h2><p>任何兼容基于模块的构建系统都可以正常使用，但如果你需要一个具体的建议，可以使用Karma进行自动化测试，他有很多社区版的插件，包括对Webpack和Browserify的支持，更多详细的安装步骤，请参考各项目的安装文档，通过这些Karma配置的例子可以快速帮助你上手（<a href="https://github.com/vuejs-templates/webpack/blob/master/template/test/unit/karma.conf.js" target="_blank" rel="noopener">webpack配置</a>，<a href="https://github.com/vuejs-templates/browserify/blob/master/template/karma.conf.js" target="_blank" rel="noopener">Browserify配置</a>）</p>
+<h2 id="简单的断言"><a href="#简单的断言" class="headerlink" title="简单的断言"></a>简单的断言</h2><p>你不必为了可测试性在组建中做任何特殊的操作，导出原始设置就可以了：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="undefined">        data()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">                message:<span class="string">"hello"</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        created()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.message = <span class="string">"bye!"</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然后随着vue导入组件的选项，你可以使用许多常用断言：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//导入vue.js和组件，进行测试</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'path/to/MyComponent.vue'</span>;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">"MyComponent"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="comment">//检查原始组件选项</span></span><br><span class="line">    it(<span class="string">'has a created hook'</span>, () =&gt; &#123;</span><br><span class="line">        expect(<span class="keyword">typeof</span> MyComponent.created).toBe(<span class="string">'function'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//评估原始组件选项中的函数的结果</span></span><br><span class="line">    it(<span class="string">'sets the correct default data'</span>, () =&gt; &#123;</span><br><span class="line">        expect(<span class="keyword">typeof</span> MyComponent.data).toBe(<span class="string">"function"</span>);</span><br><span class="line">        <span class="keyword">const</span> defaultData = MyComponent.data();</span><br><span class="line">        expect(defaultDta.message).toBe(<span class="string">"hello!"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//检查mount中的组件实例</span></span><br><span class="line">    it(<span class="string">'correctly sets the message when created'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(MyComponent).$mount();</span><br><span class="line">        expect(vm.message).toBe(<span class="string">'bye!'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个实例并检查渲染输出</span></span><br><span class="line">    it(<span class="string">'renders the correct message'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> Constructor = Vue.extend(MyComponent);</span><br><span class="line">        <span class="keyword">const</span> vm = <span class="keyword">new</span> Constructor().$mount();</span><br><span class="line">        expect(vm.$el.textContent).toBe(<span class="string">"bye!"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="编写可被测试的组件"><a href="#编写可被测试的组件" class="headerlink" title="编写可被测试的组件"></a>编写可被测试的组件</h2><p>很多组件的渲染输出由他的props决定，事实上，如果一个组件的渲染输出完全取决于他的props,那么它会让测试变得简单，就好像断言不同参数的纯函数的返回值，看下面这个例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line"><span class="javascript">        props:[<span class="string">'msg'</span>]</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>你可以在不同的props中，通过propsData选项断言他的渲染输出<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'./MyComponent.vue'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//挂载元素并返回已渲染的文本的工具函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRenderedText</span>(<span class="params">component, propsData</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> Constructor = vue.extend(componnet);</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">new</span> Constructor(&#123;<span class="attr">propsData</span>: propsData&#125;).$mount();</span><br><span class="line">    <span class="keyword">return</span> vm.$el.textContent</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'MyComponent'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'renders correctly with different props'</span>, () =&gt; &#123;</span><br><span class="line">        expect(getRenderedText(MyComponent, &#123;</span><br><span class="line">            msg:<span class="string">"Hello"</span></span><br><span class="line">        &#125;)).toBe(<span class="string">"Hello"</span>)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(<span class="string">'getRenderedText(MyComponent,&#123;</span></span><br><span class="line"><span class="string">        msg:"Bye"</span></span><br><span class="line"><span class="string">    &#125;)).toBe("Bye")</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="断言异步更新"><a href="#断言异步更新" class="headerlink" title="断言异步更新"></a>断言异步更新</h2><p>由于vue进行异步更新DOM的情况，一些依赖DOM跟新结果的断言必须在Vue.nextTick回调中进行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在状态更新后检查生成的HTML</span></span><br><span class="line">it(<span class="string">'update the renderd message when vm.message updates'</span>, done =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(MyComponent).$mount();</span><br><span class="line">    vm.message = <span class="string">'foo'</span>;</span><br><span class="line"></span><br><span class="line">    Vue.nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        expect(vm.$el.textContent).toBe(<span class="string">'foo'</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>关于更多的Vue的单元测试的内容，可参考<a href="https://vue-test-utils.vuejs.org/zh-cn/" target="_blank" rel="noopener">vue-test-utils</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单元测试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jasmine</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/03/vue-单元测试/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue-递归组件、组件间的循环引用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -838,7 +926,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">递归组件</a>
+                <a href="javascript:void(0)" class="js-tag color3">.native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">.sync</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jasmine</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,11 +946,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">.native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">.sync</a>
+                <a href="javascript:void(0)" class="js-tag color5">递归组件</a>
               </li>
             
             <div class="clearfix"></div>
