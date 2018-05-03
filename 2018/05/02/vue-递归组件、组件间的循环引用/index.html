@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue-递归组件、组件间的循环引用 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+  <meta name="description" content="递归组件组件在他的模板内可以递归的调用自己，不过它们只能通过name选项来做这件事：1name:&amp;apos;unique-name-of-my-component&amp;apos; 当你使用Vue.component全局注册一个组件时， 这个全局的ID会自动设置为该组件的name选项。">
+<meta name="keywords" content="vue,递归组件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-递归组件、组件间的循环引用">
 <meta property="og:url" content="http://yoursite.com/2018/05/02/vue-递归组件、组件间的循环引用/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:updated_time" content="2018-05-02T10:41:51.349Z">
+<meta property="og:description" content="递归组件组件在他的模板内可以递归的调用自己，不过它们只能通过name选项来做这件事：1name:&amp;apos;unique-name-of-my-component&amp;apos; 当你使用Vue.component全局注册一个组件时， 这个全局的ID会自动设置为该组件的name选项。">
+<meta property="og:updated_time" content="2018-05-03T07:14:21.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-递归组件、组件间的循环引用">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:description" content="递归组件组件在他的模板内可以递归的调用自己，不过它们只能通过name选项来做这件事：1name:&amp;apos;unique-name-of-my-component&amp;apos; 当你使用Vue.component全局注册一个组件时， 这个全局的ID会自动设置为该组件的name选项。">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -177,7 +178,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h2><p>组件在他的模板内可以递归的调用自己，不过它们只能通过name选项来做这件事：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name:&apos;unique-name-of-my-component&apos;</span><br></pre></td></tr></table></figure></p>
+<p>当你使用Vue.component全局注册一个组件时， 这个全局的ID会自动设置为该组件的name选项。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;unique-name-of-my-component&apos;,&#123;</span><br><span class="line">    //...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>稍有不慎，递归组件就可能导致无限循环：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name:&apos;stack-overflow&apos;,</span><br><span class="line">template:&apos;&lt;div&gt;&lt;stack-overflow&gt;&lt;/stack-overflow&gt;&lt;/div&gt;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>类似上述的组将将会导致‘max stack size exceeded’错误，所以请确保递归调用时条件性的（例如使用一个最终会得到的false的v-if）</p>
+<h2 id="组件间的循环引用"><a href="#组件间的循环引用" class="headerlink" title="组件间的循环引用"></a>组件间的循环引用</h2><p>假设你需要构建一个文件目录树， 像资源管理器那样的，你可能有一个&lt;tree-folder&gt;组件， 模板是这样的:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; folder.name &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tree-folder-contents</span> <span class="attr">:children</span>=<span class="string">"folder.children"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>还有一个&lt;tree-folder-contents&gt;组件，模板是这样的：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"child in chidlren"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tree-folder</span> <span class="attr">v-if</span>=<span class="string">"child.children"</span> <span class="attr">:folder</span>=<span class="string">"child"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">v-else</span>&gt;</span>&#123;&#123; child.name &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>当你仔细观察的时候，你会发现这些组件在渲染树中互为对方的后代和祖先–一个悖论！，当通过Vue.component全局注册组建的时候，<br>这个悖论就会自动解开，如果你是这样做的，那么你可以跳过这里。</p>
+<p>然而，如果你是用一个模块系统依赖/导入组件，例如通过webpack或Browserify，你会遇到一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">failed to mount component: template or render function not defined.</span><br></pre></td></tr></table></figure></p>
+<p>为了解释这里发生了什么，我们先把两个组件成为A和B,模块系统发现他需要A，但是A先依赖B，但是B又依赖A,但是A又依赖B,如此往复，这变成了一个循环，不知道如何不经过其中一个组件而解析出另一个组件，为了解决这个问题，我们需要给模块系统一个点， 在那里“A反正是需要B的，但是我们不需要先解析B”</p>
+<p>在我们的例子中，把&lt;tree-folder&gt;组件设置为了那个点。我们知道那个产生悖论的子组件是&lt;tree-folder-contents&gt;组件，我们会等到生命周期钩子beforeCreate时去注册他：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beforeCreate:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.$options.components.TreeFolderContents =  <span class="built_in">require</span>(<span class="string">'./tree-folder-contents.vue'</span>).default;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>或者，在本地注册组建的时候，你可以使用webpack的异步import：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components:&#123;</span><br><span class="line">    TreeFolderContents: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./tree-folder-contents.vue'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样问题就解决了</p>
+
       
 
       
@@ -206,6 +219,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">递归组件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -271,8 +299,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/05/02/vue-递归组件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue-递归组件</div>
+    <a href="/2018/05/02/vue-作用域插槽/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-作用域插槽</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -411,6 +439,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">递归组件</a>
               </li>
              
               <li class="article-tag-list-item">
