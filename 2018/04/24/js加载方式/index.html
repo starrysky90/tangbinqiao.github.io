@@ -183,8 +183,8 @@
 <h2 id="2-异步加载"><a href="#2-异步加载" class="headerlink" title="2.异步加载"></a>2.异步加载</h2><p>异步加载又叫非阻塞加载， 浏览器在下载执行js的同时， 还会继续进行后续页面的处理</p>
 <h3 id="1-动态创建script标签"><a href="#1-动态创建script标签" class="headerlink" title="1.动态创建script标签"></a>1.动态创建script标签</h3><a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent)&#123;</span><br><span class="line">        <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>,insertScript);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, insertScript, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> insertScript = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ga = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        ga.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">        ga.src = <span class="string">"http://xxx.script.js"</span></span><br><span class="line">        <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">        s.parentNode.insertBefore(ga, s);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h3 id="2-defer和async"><a href="#2-defer和async" class="headerlink" title="2. defer和async"></a>2. defer和async</h3><p>defer属性： IE4.0就出现， 浏览器会并行下载其他有defer属性的script,而不会阻塞页面后续处理， 注： 所有的defer脚本必须保证按顺序执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> defer&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>async属性： HTML5新属性，不会阻塞页面加载， 脚本将在下载后尽快执行，但是不能保证按顺序执行， 他们将在onload事件之前完成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2-defer和async"><a href="#2-defer和async" class="headerlink" title="2. defer和async"></a>2. defer和async</h3><p>defer属性： IE4.0就出现， 浏览器会并行下载其他有defer属性的script,而不会阻塞页面后续处理， 注： 所有的defer脚本必须保证按顺序执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>async属性： HTML5新属性，不会阻塞页面加载， 脚本将在下载后尽快执行，但是不能保证按顺序执行， 他们将在onload事件之前完成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>Firefox 3.6、Opera 10.5、IE 9和最新的Chrome和Safari都支持async属性。可以同时使用async和defer，这样IE 4之后的所有IE都支持异步加载。</p>
 <h3 id="3-其他方法"><a href="#3-其他方法" class="headerlink" title="3. 其他方法"></a>3. 其他方法</h3><p>XHR Injection | XHR Eval | Script In Iframe | document.write</p>
 <p>XHR Injection:通过XMLHttpRequest来获取javascript,然后创建一个script元素插入到DOM结构中，ajax请求成功后设置script元素插入到DOM结构中。ajax请求成功后设置scirpt.text为请求成功的返回responseText<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getXMLHttp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj ;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> xmlHTTP = getXMLHttp();</span><br><span class="line">xmlHTTP.open(<span class="string">'GET'</span>, <span class="string">"//ajax/url"</span>);</span><br><span class="line">xmlHTTP.send();</span><br><span class="line">XMLHTTP.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xmlHTTP.readyState === <span class="number">4</span> &amp;&amp; xmlHTTP.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        script.text= xmlHTTP.responseText;</span><br><span class="line">        docuent.getElemenentsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -425,6 +425,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
@@ -437,11 +441,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">作用域插槽</a>
+                <a href="javascript:void(0)" class="js-tag color3">.native</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color1">.sync</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">作用域插槽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -450,14 +458,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jasmine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">.native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">.sync</a>
               </li>
              
               <li class="article-tag-list-item">
