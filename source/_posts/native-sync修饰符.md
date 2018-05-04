@@ -1,6 +1,6 @@
 ---
 title: 'vue-.native,.sync修饰符'
-date: 2018-05-02 11:21:33
+date: 2017-05-02 11:21:33
 tags: ['vue','.native','.sync']
 ---
 ## .native(给组件绑定原生事件)
