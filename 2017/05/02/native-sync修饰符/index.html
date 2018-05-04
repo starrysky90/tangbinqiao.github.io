@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/5 | TBQ的博客</title>
+  <title>vue-.native,.sync修饰符 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TBQ的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/05/index.html">
+  <meta name="description" content=".native(给组件绑定原生事件)有时候，你可能想在某个组建的根元素上监听一个原生事件。可以用v-on的修饰符.native,例如：    1&amp;lt;my-component v-on:click.native=&amp;quot;doThething&amp;quot;&amp;gt;&amp;lt;/my-component&amp;gt;">
+<meta name="keywords" content="vue,.native,.sync">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-.native,.sync修饰符">
+<meta property="og:url" content="http://yoursite.com/2017/05/02/native-sync修饰符/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta property="og:description" content=".native(给组件绑定原生事件)有时候，你可能想在某个组建的根元素上监听一个原生事件。可以用v-on的修饰符.native,例如：    1&amp;lt;my-component v-on:click.native=&amp;quot;doThething&amp;quot;&amp;gt;&amp;lt;/my-component&amp;gt;">
+<meta property="og:updated_time" content="2018-05-04T08:36:44.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TBQ的博客">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:title" content="vue-.native,.sync修饰符">
+<meta name="twitter:description" content=".native(给组件绑定原生事件)有时候，你可能想在某个组建的根元素上监听一个原生事件。可以用v-on的修饰符.native,例如：    1&amp;lt;my-component v-on:click.native=&amp;quot;doThething&amp;quot;&amp;gt;&amp;lt;/my-component&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -156,64 +158,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-native-sync修饰符" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/javascript排序算法/" class="archive-article-date">
-  	<time datetime="2018-05-04T02:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/04/javascript排序算法/">javascript排序算法</a>
+    <h1 class="article-title" itemprop="name">
+      vue-.native,.sync修饰符
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/02/native-sync修饰符/" class="archive-article-date">
+  	<time datetime="2017-05-02T03:21:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="native-给组件绑定原生事件"><a href="#native-给组件绑定原生事件" class="headerlink" title=".native(给组件绑定原生事件)"></a>.native(给组件绑定原生事件)</h2><p>有时候，你可能想在某个组建的根元素上监听一个原生事件。可以用v-on的修饰符.native,例如：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component v-on:click.native=&quot;doThething&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="sync修饰符-双向数据绑定"><a href="#sync修饰符-双向数据绑定" class="headerlink" title=".sync修饰符(双向数据绑定)"></a>.sync修饰符(双向数据绑定)</h2><p><strong> 2.3.0+ </strong><br>在一些情况下， 我们可能会需要对一个prop进行“双向绑定”,事实上， 这正是Vue.1.x中的.sync修饰符提供的功能， 当一个子组件改变了一个带.sync的prop的值时，这个变化也会同步到父组件中所绑定的值， 这很方便，但是也会导致问题，因为他破坏了单向数据流，由于子组件改变prop的代码和普通的状态改动代码毫无区别，<br>当光看子组件的代码时，你完全不知道他何时悄悄改变了父组件的状态，这在debug复杂结构的应用时会带来很高的维护成本。</p>
+<p>上面所说的正是我们在2.0中移除.sync的理由。但在2.0发布之后的实际应用中，我们发现.sync还是有其适用之处的，比如开发可复用的组件库时，我们需要做的只是让子组件改变父组件状态的代码更容易被区分。</p>
+<p>从2.3.0起我们重新引入了.sync修饰符，但是这次它只是作为编译时的语法糖存在，他会被扩展为一个自动更新父组件的v-on监听器。<br>如下代码：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo.sync=&quot;bar&quot;&gt;&lt;/comp&gt;</span><br></pre></td></tr></table></figure></p>
+<p>会被扩展为：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo=&quot;bar&quot; @update:foo=&quot;val =&gt; bar=val&quot;&gt;&lt;/comp&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当子组件需要更新foo的值时需要显式地触发一个更新事件：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$emit(&quot;update:foo&quot;, newValue);</span><br></pre></td></tr></table></figure></p>
+<p>当使用一个对象一次性设置多个属性的时候，这个.sync修饰符也可以和v-bind一起使用：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp v-bind.sync=&quot;&#123;foo:1, bar:2&#125;&quot;&gt;&lt;/comp&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这个例子会为foo和bar同时添加用于更新的v-on监听器。</p>
+<h2 id="使用自定义事件的表单输入组件"><a href="#使用自定义事件的表单输入组件" class="headerlink" title="使用自定义事件的表单输入组件"></a>使用自定义事件的表单输入组件</h2><p>自定义事件可以用来创建自定义的表单输入组件，使用v-model来进行数据双向绑定。要牢记：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;something&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这不过是以下示例的语法糖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-bind:value=&quot;something&quot; v-on:input=&quot;something = $event.target.value&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>所以在组件中使用时， 他相当于下面的简写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-input v-bind:value=&quot;something&quot; v-on:input=&quot;something = arguments[0]&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>所以要让组件的v-model生效，他应该（从2.2.0起时刻配置的）:</p>
+<ul>
+<li>接收一个 value prop</li>
+<li>在有新的值时触发input事件并将新值作为参数<br>我们来看一个非常简单的货币输入的自定义控件<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">currency-input</span> <span class="attr">v-model</span>=<span class="string">"price"</span>&gt;</span><span class="tag">&lt;/<span class="name">currency-input</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'currency-input'</span>,&#123;</span><br><span class="line">    template:<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;span&gt;</span></span><br><span class="line"><span class="string">            $&lt;input ref="input" v-bind:value="value" v-on:input="updateValue($event.target.value)"</span></span><br><span class="line"><span class="string">        &lt;/span&gt;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">    props:[<span class="string">'value'</span>],</span><br><span class="line">    methods:&#123;</span><br><span class="line">        updateValue:<span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> formattedValue = value.trim().slice(<span class="number">0</span>, vlaue.indexOf(<span class="string">'.'</span>) === <span class="number">-1</span>? value.length:value.indexOf(<span class="string">'.'</span>)+<span class="number">3</span>);</span><br><span class="line">            <span class="keyword">if</span>(formattedValue !== value)&#123;</span><br><span class="line">                <span class="keyword">this</span>.$refs.input.value = formattedValue;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//通过input事件带出数值</span></span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, <span class="built_in">Number</span>(formattedValue));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="自定义组件的v-model"><a href="#自定义组件的v-model" class="headerlink" title="自定义组件的v-model"></a>自定义组件的v-model</h2><p>2.2.0新增<br>默认情况下， 一个组件的v-model会使用value prop和input事件，但是诸如单选框和复选框的输入类型可能吧value用作了别的目的，model选项可以避免这样的冲突。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-checkbox&apos;, &#123;</span><br><span class="line">    model:&#123;</span><br><span class="line">        prop:&quot;checked&quot;,</span><br><span class="line">        event:&quot;change&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    props:&#123;</span><br><span class="line">        checked:Boolean,</span><br><span class="line">        value: String</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-checkbox v-model=&quot;foo&quot; value=&quot;some value&quot;&gt;&lt;/my-checkbox&gt;</span><br></pre></td></tr></table></figure>
+<p>上述代码等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-checkbox</span><br><span class="line">    :checked=&quot;foo&quot;</span><br><span class="line">    @change=&quot;val =&gt; &#123;foo = val&#125;&quot;</span><br><span class="line">    value=&quot;some value&quot;</span><br><span class="line">&gt;&lt;/my-checkbox&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意在组件中，仍然需要显示申明checked这个prop</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">.native</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">.sync</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/05/02/native-sync修饰符/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/05/02/vue-作用域插槽/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue-作用域插槽
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/05/02/vue-单向数据流/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-单向数据流</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -236,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

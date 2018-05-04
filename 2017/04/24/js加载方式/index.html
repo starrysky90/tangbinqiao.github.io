@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/5 | TBQ的博客</title>
+  <title>js加载方式 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TBQ的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/05/index.html">
+  <meta name="description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js加载方式">
+<meta property="og:url" content="http://yoursite.com/2017/04/24/js加载方式/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta property="og:description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
+<meta property="og:updated_time" content="2018-05-04T08:36:59.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TBQ的博客">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:title" content="js加载方式">
+<meta name="twitter:description" content="1.同步加载我们平时使用最多的一种方式：1&amp;lt;script src=&quot;http://yourdomain.com/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -156,36 +158,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js加载方式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/04/javascript排序算法/" class="archive-article-date">
-  	<time datetime="2018-05-04T02:24:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/04/javascript排序算法/">javascript排序算法</a>
+    <h1 class="article-title" itemprop="name">
+      js加载方式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/24/js加载方式/" class="archive-article-date">
+  	<time datetime="2017-04-24T01:35:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-同步加载"><a href="#1-同步加载" class="headerlink" title="1.同步加载"></a>1.同步加载</h2><p>我们平时使用最多的一种方式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://yourdomain.com/script.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>同步模式，又称阻塞模式， 会阻止浏览器的后续处理， 停止后续的解析，只有当前加载完成后，才能进行下一步操作。所以默认同步执行才是安全的， 但这样如果js中有输出document内容，修改dom,重定向等行为，就会造成页面堵塞，所以一般建把&lt;script&gt;标签放在&lt;body&gt;结尾处，这样尽可能减少页面阻塞。</p>
+<h2 id="2-异步加载"><a href="#2-异步加载" class="headerlink" title="2.异步加载"></a>2.异步加载</h2><p>异步加载又叫非阻塞加载， 浏览器在下载执行js的同时， 还会继续进行后续页面的处理</p>
+<h3 id="1-动态创建script标签"><a href="#1-动态创建script标签" class="headerlink" title="1.动态创建script标签"></a>1.动态创建script标签</h3><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent)&#123;</span><br><span class="line">        <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>,insertScript);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, insertScript, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> insertScript = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> ga = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        ga.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">        ga.src = <span class="string">"http://xxx.script.js"</span></span><br><span class="line">        <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">        s.parentNode.insertBefore(ga, s);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="2-defer和async"><a href="#2-defer和async" class="headerlink" title="2. defer和async"></a>2. defer和async</h3><p>defer属性： IE4.0就出现， 浏览器会并行下载其他有defer属性的script,而不会阻塞页面后续处理， 注： 所有的defer脚本必须保证按顺序执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> defer&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>async属性： HTML5新属性，不会阻塞页面加载， 脚本将在下载后尽快执行，但是不能保证按顺序执行， 他们将在onload事件之前完成<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> <span class="keyword">async</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>Firefox 3.6、Opera 10.5、IE 9和最新的Chrome和Safari都支持async属性。可以同时使用async和defer，这样IE 4之后的所有IE都支持异步加载。</p>
+<h3 id="3-其他方法"><a href="#3-其他方法" class="headerlink" title="3. 其他方法"></a>3. 其他方法</h3><p>XHR Injection | XHR Eval | Script In Iframe | document.write</p>
+<p>XHR Injection:通过XMLHttpRequest来获取javascript,然后创建一个script元素插入到DOM结构中，ajax请求成功后设置script元素插入到DOM结构中。ajax请求成功后设置scirpt.text为请求成功的返回responseText<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getXMLHttp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj ;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        obj = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> obj</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> xmlHTTP = getXMLHttp();</span><br><span class="line">xmlHTTP.open(<span class="string">'GET'</span>, <span class="string">"//ajax/url"</span>);</span><br><span class="line">xmlHTTP.send();</span><br><span class="line">XMLHTTP.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xmlHTTP.readyState === <span class="number">4</span> &amp;&amp; xmlHTTP.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">        script.text= xmlHTTP.responseText;</span><br><span class="line">        docuent.getElemenentsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>XHR Eval:与XHR Injection对responseText的执行方式不同， 直接把responseText放在eval函数里面执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//获取XMLHttpRequest对象，考虑兼容性。</span></span><br><span class="line"><span class="keyword">var</span> getXmlHttp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">        obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        obj = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    <span class="keyword">return</span> obj;</span><br><span class="line">&#125;;  </span><br><span class="line"><span class="comment">//采用Http请求get方式;open()方法的第三个参数表示采用异步(true)还是同步(false)处理</span></span><br><span class="line"><span class="keyword">var</span> xmlHttp = getXmlHttp();</span><br><span class="line">xmlHttp.open(<span class="string">"GET"</span>, <span class="string">"http://cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"</span>, <span class="literal">true</span>);</span><br><span class="line">xmlHttp.send(); </span><br><span class="line">xmlHttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState == <span class="number">4</span> &amp;&amp; xmlHttp.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="built_in">eval</span>(xmlHttp.responseText);</span><br><span class="line">        <span class="comment">//alert($);//可以弹出$,表明JS已经加载进来。click事件放在其它出会出问题，应该是还没加载进来</span></span><br><span class="line">        $(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert($(<span class="keyword">this</span>).text());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,27 +225,114 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/04/24/js加载方式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/04/24/vue实现按需加载的三种方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue实现按需加载的三种方式
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -236,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
