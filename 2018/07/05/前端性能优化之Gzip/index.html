@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue-单向数据流 | TBQ的博客</title>
+  <title>前端性能优化之Gzip | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。我们一般会在下面两种情况下去修改prop中数据：  Prop作为初始值传入后，子组件想把它">
-<meta name="keywords" content="vue">
+  <meta name="description" content="背景如果你是个前端开发人员，你肯定知道线上环境要把js，css，图片等压缩，尽量减少文件的大小，提升响应速度，特别是对移动端，这个非常重要。">
+<meta name="keywords" content="gzip,性能优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-单向数据流">
-<meta property="og:url" content="http://yoursite.com/2018/05/02/vue-单向数据流/index.html">
+<meta property="og:title" content="前端性能优化之Gzip">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/前端性能优化之Gzip/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。我们一般会在下面两种情况下去修改prop中数据：  Prop作为初始值传入后，子组件想把它">
-<meta property="og:updated_time" content="2018-05-03T09:27:38.800Z">
+<meta property="og:description" content="背景如果你是个前端开发人员，你肯定知道线上环境要把js，css，图片等压缩，尽量减少文件的大小，提升响应速度，特别是对移动端，这个非常重要。">
+<meta property="og:image" content="http://yoursite.com/img/gzip1.png">
+<meta property="og:image" content="http://yoursite.com/img/gzip2.png">
+<meta property="og:image" content="http://yoursite.com/img/gzip3.png">
+<meta property="og:image" content="http://yoursite.com/img/gzip4.png">
+<meta property="og:image" content="http://yoursite.com/img/gzip5.png">
+<meta property="og:updated_time" content="2018-07-05T05:32:18.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-单向数据流">
-<meta name="twitter:description" content="Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。我们一般会在下面两种情况下去修改prop中数据：  Prop作为初始值传入后，子组件想把它">
+<meta name="twitter:title" content="前端性能优化之Gzip">
+<meta name="twitter:description" content="背景如果你是个前端开发人员，你肯定知道线上环境要把js，css，图片等压缩，尽量减少文件的大小，提升响应速度，特别是对移动端，这个非常重要。">
+<meta name="twitter:image" content="http://yoursite.com/img/gzip1.png">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -158,38 +164,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue-单向数据流" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-前端性能优化之Gzip" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue-单向数据流
+      前端性能优化之Gzip
     </h1>
   
 
         
-        <a href="/2018/05/02/vue-单向数据流/" class="archive-article-date">
-  	<time datetime="2018-05-02T02:24:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-02</time>
+        <a href="/2018/07/05/前端性能优化之Gzip/" class="archive-article-date">
+  	<time datetime="2018-07-05T03:35:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Vue中Prop是单向绑定的：当父组件的属性变化时，将其传导给子组件，但是反过来不会，这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。<br>另外，每次父组件更新时，子组件的所有prop都会更新为最新值， 这意味着你不应该在子组件内部改变prop，如果你这么做了，Vue会在控制台给出警告。<br>我们一般会在下面两种情况下去修改prop中数据：</p>
-<ol>
-<li>Prop作为初始值传入后，子组件想把它当作<strong>局部数据</strong>来用 </li>
-<li>Prop作为原始数据传入后，由子组件处理成<strong>其他数据</strong>输出</li>
-</ol>
-<a id="more"></a>
-<p>对于以上两种情况，争取的应对方式为:</p>
-<h3 id="定义一个局部变量，-并用prop的值初始化它"><a href="#定义一个局部变量，-并用prop的值初始化它" class="headerlink" title="定义一个局部变量， 并用prop的值初始化它"></a>定义一个局部变量， 并用prop的值初始化它</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'initialCounter'</span>],</span><br><span class="line">data:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        counter:this.initialCounter</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h3 id="定义一个计算属性，-处理prop的值并返回"><a href="#定义一个计算属性，-处理prop的值并返回" class="headerlink" title="定义一个计算属性， 处理prop的值并返回"></a>定义一个计算属性， 处理prop的值并返回</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[<span class="string">'size'</span>],</span><br><span class="line">computed:&#123;</span><br><span class="line">    normalizedSize:<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this.size.trim().toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>注意在javascript中对象和数组是引用类型，指向同一个内存空间，如果prop是一个对象或数组， 在子组件内部改变它会影响父组件的状态</p>
-</blockquote>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>如果你是个前端开发人员，你肯定知道线上环境要把js，css，图片等压缩，尽量减少文件的大小，提升响应速度，特别是对移动端，这个非常重要。<br><a id="more"></a></p>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><p>前端压缩的方式很多，依赖java的有ant工具，前端自己打包压缩的有grunt，gulp，webpack，这些压缩也很重要，基本上能压缩50%以上，下面我们对压缩文件来个对比，如图所示，这是未压缩的<br><img src="/img/gzip1.png" alt=""><br>这是压缩后的<br><img src="/img/gzip2.png" alt=""><br>高能预警！gzip能在压缩后基础上再进行压缩50%以上！<br><img src="/img/gzip3.png" alt=""></p>
+<h2 id="gzip压缩原理"><a href="#gzip压缩原理" class="headerlink" title="gzip压缩原理"></a>gzip压缩原理</h2><p>不是每个浏览器都支持gzip，如果知道客户端是否支持gzip，请求头中有个Accept-Encoding来标识对压缩的支持，客户端http请求头声明浏览器支持的压缩的方式，服务端配合启用压缩，压缩的文件类型，压缩方式，当客户端请求到服务端的时候，服务器解析请求头，如果客户端支持gzip,响应时对请求的资源进行压缩并返回给客户端， 浏览器按照自己的解析方式，在http响应头，我们可以看到content-encoding:gzip,这是指服务端使用了gzip的压缩方式<br><img src="/img/gzip4.png" alt=""><br>那么怎么看没有用gzip压缩的文件呢，打开f12,查看network，按照下面方式过滤<br><img src="/img/gzip5.png" alt=""><br>content-encoding是gzip的话就说明返回的是gzip</p>
+<p>还有一点 gzip不压缩图片，因为压缩之后会更大- -，所以一般到是压缩css和js</p>
+<h2 id="如何启用gzip"><a href="#如何启用gzip" class="headerlink" title="如何启用gzip"></a>如何启用gzip</h2><p>前面说过了，启用gzip需要客户端和服务端的支持，如果客户端支持gzip的解析，那么只要服务端能够返回gzip的文件就可以启用gzip了，现在来说一下几种不同的环境下的服务端如何配置</p>
+<h3 id="node端"><a href="#node端" class="headerlink" title="node端"></a>node端</h3><p>node端很简单，只需要加上compress模块即可，代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> compression = <span class="built_in">require</span>(<span class="string">'compression'</span>)</span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">//尽量在其他中间件前使用compression</span></span><br><span class="line">app.use(compression())</span><br></pre></td></tr></table></figure></p>
+<p>这是基本用法，如果还要对请求进行过滤的话，还要加上：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.use(compression(filter: shouldCompress))</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shouldCompress</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.headers[<span class="string">'x-no-compression'</span>])&#123;</span><br><span class="line">        <span class="comment">//过滤掉请求头中包含'x-no-compression'</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> compression.filter(req, res)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为node读取的是生成目录中的文件，所以要先用webpack等其他工具进行压缩成gzip,webpack的配置如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CompressionWebpackPlugin = <span class="built_in">require</span>(<span class="string">'compression-webpack-plugin'</span>)</span><br><span class="line">plugins.push(</span><br><span class="line">    <span class="keyword">new</span> CompressionWebpackPlugin(&#123;</span><br><span class="line">        asset:<span class="string">'[path].gz[query]'</span>, <span class="comment">//目标文件</span></span><br><span class="line">        algorithm:<span class="string">'gzip'</span>,<span class="comment">//使用gzip压缩</span></span><br><span class="line">        test:<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\.(js|css)$'</span>), <span class="comment">//压缩js与css</span></span><br><span class="line">        threshold:<span class="number">10240</span>, <span class="comment">//资源文件达到10240B=10kb才会被压缩</span></span><br><span class="line">        minRatio:<span class="number">0.8</span>  <span class="comment">//最小压缩比达到0.8时才会被压缩</span></span><br><span class="line">    &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -224,7 +226,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gzip</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
         		</li>
       		
 		</ul>
@@ -280,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/02/vue-单向数据流/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/05/前端性能优化之Gzip/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +300,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/02/native-sync修饰符/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue-.native,.sync修饰符
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/26/flex-grow、flex-shrink、flex-basis学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flex-grow、flex-shrink、flex-basis学习</div>
+    <a href="/2018/05/07/webpack之bundle-loader/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack之bundle-loader</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -435,6 +432,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">bind</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
@@ -447,6 +448,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">UI框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">.native</a>
               </li>
              
@@ -455,7 +468,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">作用域插槽</a>
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +480,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bundle-loader</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">递归组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">作用域插槽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gzip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">性能优化</a>
               </li>
             
             <div class="clearfix"></div>
