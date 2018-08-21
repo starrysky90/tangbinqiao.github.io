@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue实现按需加载的三种方式 | TBQ的博客</title>
+  <title>dns-prefetch | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. vue异步组件技术. vue-router配置路由， 使用vue的异步组件技术，可以实现按需加载12345&amp;#123;    path:&quot;promisedemo&quot;,    name:&quot;PromiseDemo&quot;,    component: resolve =&amp;gt; require([&apos;../components/PromiseDemo&apos;], resolve)&amp;#125;">
-<meta name="keywords" content="vue">
+  <meta name="description" content="dns预获取12&amp;lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&amp;gt;&amp;lt;link ref=&quot;dns-prefecth&quot; href=&quot;//misc.360buyimg.com&quot; /&amp;gt;">
+<meta name="keywords" content="dns-prefetch,性能优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue实现按需加载的三种方式">
-<meta property="og:url" content="http://yoursite.com/2017/04/24/vue实现按需加载的三种方式/index.html">
+<meta property="og:title" content="dns-prefetch">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/dns-prefetch/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="1. vue异步组件技术. vue-router配置路由， 使用vue的异步组件技术，可以实现按需加载12345&amp;#123;    path:&quot;promisedemo&quot;,    name:&quot;PromiseDemo&quot;,    component: resolve =&amp;gt; require([&apos;../components/PromiseDemo&apos;], resolve)&amp;#125;">
-<meta property="og:updated_time" content="2018-05-07T09:06:50.979Z">
+<meta property="og:description" content="dns预获取12&amp;lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&amp;gt;&amp;lt;link ref=&quot;dns-prefecth&quot; href=&quot;//misc.360buyimg.com&quot; /&amp;gt;">
+<meta property="og:image" content="http://yoursite.com/img/jd.png">
+<meta property="og:updated_time" content="2018-08-21T06:35:11.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue实现按需加载的三种方式">
-<meta name="twitter:description" content="1. vue异步组件技术. vue-router配置路由， 使用vue的异步组件技术，可以实现按需加载12345&amp;#123;    path:&quot;promisedemo&quot;,    name:&quot;PromiseDemo&quot;,    component: resolve =&amp;gt; require([&apos;../components/PromiseDemo&apos;], resolve)&amp;#125;">
+<meta name="twitter:title" content="dns-prefetch">
+<meta name="twitter:description" content="dns预获取12&amp;lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&amp;gt;&amp;lt;link ref=&quot;dns-prefecth&quot; href=&quot;//misc.360buyimg.com&quot; /&amp;gt;">
+<meta name="twitter:image" content="http://yoursite.com/img/jd.png">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -158,30 +160,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue实现按需加载的三种方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-dns-prefetch" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue实现按需加载的三种方式
+      dns-prefetch
     </h1>
   
 
         
-        <a href="/2017/04/24/vue实现按需加载的三种方式/" class="archive-article-date">
-  	<time datetime="2017-04-24T03:01:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-24</time>
+        <a href="/2018/08/21/dns-prefetch/" class="archive-article-date">
+  	<time datetime="2018-08-21T06:16:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-vue异步组件技术"><a href="#1-vue异步组件技术" class="headerlink" title="1. vue异步组件技术"></a>1. vue异步组件技术</h2><p>. vue-router配置路由， 使用vue的<a href="https://cn.vuejs.org/v2/guide/components.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6" target="_blank" rel="noopener">异步组件</a>技术，可以实现按需加载<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">"promisedemo"</span>,</span><br><span class="line">    name:<span class="string">"PromiseDemo"</span>,</span><br><span class="line">    component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'../components/PromiseDemo'</span>], resolve)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="dns预获取"><a href="#dns预获取" class="headerlink" title="dns预获取"></a>dns预获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"x-dns-prefetch-control"</span> content=<span class="string">"on"</span> /&gt;</span><br><span class="line">&lt;link ref=<span class="string">"dns-prefecth"</span> href=<span class="string">"//misc.360buyimg.com"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="2-es提案的import"><a href="#2-es提案的import" class="headerlink" title="2. es提案的import"></a>2. es提案的import</h2><p>. 推荐使用这个方式（需要webpack&gt; 2.4）<br>. webpack官方文档： <a href="https://doc.webpack-china.org/guides/code-splitting#-dynamic-imports-" target="_blank" rel="noopener">webpack中使用import()</a><br>. vue官方文档： <a href="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" target="_blank" rel="noopener">路由懒加载（使用import()）</a><br>vue-router配置路由， 代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> demo1 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'../components/demo1'</span>);</span><br><span class="line"><span class="keyword">const</span> demo2 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'../components/demo2'</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Rouer(&#123;</span><br><span class="line">    routes:[</span><br><span class="line">        &#123;</span><br><span class="line">            path:<span class="string">"/demo1"</span>,</span><br><span class="line">            name:<span class="string">"Demo1"</span>,</span><br><span class="line">            component:demo1</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            path: <span class="string">'/demo2'</span>,</span><br><span class="line">            name:<span class="string">"Demo2"</span>,</span><br><span class="line">            component:demo2</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-webpack提供的require-ensure"><a href="#3-webpack提供的require-ensure" class="headerlink" title="3. webpack提供的require.ensure()"></a>3. webpack提供的require.ensure()</h2><p>. vue-router配置路由， 使用webpack的<a href="https://doc.webpack-china.org/api/module-methods#require-ensure" target="_blank" rel="noopener">require.ensure</a>技术，也可以实现按需加载，<br>这种情况下， 多个路由制定相同的chunkName, 会合并打包成一个js文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">"/demo1"</span>,</span><br><span class="line">    name:<span class="string">"Demo1"</span>,</span><br><span class="line">    component:<span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; resolve(<span class="built_in">require</span>(<span class="string">'../components/demo1'</span>)), <span class="string">'demo'</span>)</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    path:<span class="string">"/hello"</span>,</span><br><span class="line">    name:<span class="string">"Hello"</span>,</span><br><span class="line">    component:<span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>.ensure([], () =&gt; resolve(<span class="built_in">require</span>(<span class="string">'../components/hello'</span>)), <span class="string">'demo'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置DNS预获取有两个作用，1.减少DNS请求次数 2.进行DNS预获取<br>当网页打开时，浏览器会在加载网页时对网页中的域名进行解析缓存， 这样在你单击当前网页的链接时就无需进行DNS的解析，减少用户等待时间，提高用户体验</p>
+<p>默认情况下浏览器会对页面中和当前域名（正在浏览页的域名）不再同一个域的域名进行预获取， 并且缓存结果，这就是隐式的DNS prefetch.如果对页面中没有出现的域进行预获取，那么就要显式的DNS Prefetch了</p>
+<p>来看一张京东html源码的截图<br><img src="/img/jd.png" alt=""></p>
+<p>需要注意的是，虽然使用 DNS Prefetch 能够加快页面的解析速度，但是也不能滥用，因为有开发者指出 禁用DNS 预读取能节省每月100亿的DNS查询<br>如果需要禁止隐式的 DNS Prefetch，可以使用以下的标签：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"x-dns-prefetch-control"</span> content=<span class="string">"off"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -216,7 +220,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dns-prefetch</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
         		</li>
       		
 		</ul>
@@ -272,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/04/24/vue实现按需加载的三种方式/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/21/dns-prefetch/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +294,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/26/flex-grow、flex-shrink、flex-basis学习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          flex-grow、flex-shrink、flex-basis学习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/24/js加载方式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js加载方式</div>
+    <a href="/2018/08/21/BFC背后的原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BFC背后的原理</div>
       <i class="icon-circle-right"></i>
     </a>
   
