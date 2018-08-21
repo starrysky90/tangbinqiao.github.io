@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>BFC背后的原理 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么BFC是什么在解释之前， 需要介绍Box, Formatting context的概念">
+  <meta name="description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？在解释之前， 需要介绍Box, Formatting context的概念">
 <meta name="keywords" content="BFC,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BFC背后的原理">
 <meta property="og:url" content="http://yoursite.com/2018/08/21/BFC背后的原理/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么BFC是什么在解释之前， 需要介绍Box, Formatting context的概念">
-<meta property="og:updated_time" content="2018-08-21T04:40:33.235Z">
+<meta property="og:description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？在解释之前， 需要介绍Box, Formatting context的概念">
+<meta property="og:updated_time" content="2018-08-21T04:50:22.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC背后的原理">
-<meta name="twitter:description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么BFC是什么在解释之前， 需要介绍Box, Formatting context的概念">
+<meta name="twitter:description" content="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？在解释之前， 需要介绍Box, Formatting context的概念">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="BFC已经是一个耳熟能问的词语，-网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么"><a href="#BFC已经是一个耳熟能问的词语，-网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么" class="headerlink" title="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么"></a>BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）当时BFC究竟是什么</h2><h3 id="BFC是什么"><a href="#BFC是什么" class="headerlink" title="BFC是什么"></a>BFC是什么</h3><p>在解释之前， 需要介绍Box, Formatting context的概念<br><a id="more"></a><br>Box：css布局的基本单位<br>    Box是css布局的对象和基本单位，直观来说就是页面是由很多box组成的，元素的类型和display属性，决定了box类型，会参与不同的formatting context(一个决定如何渲染文档的容器)，因此box内的元素会以不同的方式渲染，让我们看看那些盒子：</p>
+        <h3 id="BFC已经是一个耳熟能问的词语，-网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？"><a href="#BFC已经是一个耳熟能问的词语，-网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？" class="headerlink" title="BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？"></a>BFC已经是一个耳熟能问的词语， 网上的文章介绍了如何触发BFC和BFC的一些用处，（如清除浮动，防止margin重叠）但是BFC究竟是什么？</h3><p>在解释之前， 需要介绍Box, Formatting context的概念<br><a id="more"></a><br>Box：css布局的基本单位<br>    Box是css布局的对象和基本单位，直观来说就是页面是由很多box组成的，元素的类型和display属性，决定了box类型，会参与不同的formatting context(一个决定如何渲染文档的容器)，因此box内的元素会以不同的方式渲染，让我们看看那些盒子：</p>
 <pre><code>* block-level : display属性：block, list-item, table的元素， 会生成block-level box， 并且参与block formatting context
 * inline-level : 属性inline, inline-table 会生成inline-level box,并且参与inline formatting context
 </code></pre><p>BFC定义：<br>    BFC（block formatting context）直译为“块级格式化上下文”，他是一个独立的渲染区域，只有block-level box参与，他规定了block-level box如何布局，并且与这个区域外部毫不相干</p>
