@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: bind | TBQ的博客</title>
+  <title>前端安全性 | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TBQ的博客">
-<meta property="og:url" content="http://yoursite.com/tags/bind/index.html">
+  <meta name="description" content="跨站脚本攻击（xss）xss(crsoss site scripting)XSS是常见的Web攻击技术之一.所谓的跨站脚本攻击指得是:恶意攻击者往Web页面里注入恶意Script代码，用户浏览这些网页时，就会执行其中的恶意代码，可对用户进行盗取cookie信息、会话劫持等各种攻击">
+<meta name="keywords" content="安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端安全性">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/前端安全性/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta property="og:description" content="跨站脚本攻击（xss）xss(crsoss site scripting)XSS是常见的Web攻击技术之一.所谓的跨站脚本攻击指得是:恶意攻击者往Web页面里注入恶意Script代码，用户浏览这些网页时，就会执行其中的恶意代码，可对用户进行盗取cookie信息、会话劫持等各种攻击">
+<meta property="og:updated_time" content="2018-08-21T09:28:00.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TBQ的博客">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:title" content="前端安全性">
+<meta name="twitter:description" content="跨站脚本攻击（xss）xss(crsoss site scripting)XSS是常见的Web攻击技术之一.所谓的跨站脚本攻击指得是:恶意攻击者往Web页面里注入恶意Script代码，用户浏览这些网页时，就会执行其中的恶意代码，可对用户进行盗取cookie信息、会话劫持等各种攻击">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -156,64 +158,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-前端安全性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/Javascript中bind方法的实现/" class="archive-article-date">
-  	<time datetime="2018-05-07T02:00:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/Javascript中bind方法的实现/">Javascript中bind方法的实现</a>
+    <h1 class="article-title" itemprop="name">
+      前端安全性
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/21/前端安全性/" class="archive-article-date">
+  	<time datetime="2018-08-21T09:17:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="跨站脚本攻击（xss）"><a href="#跨站脚本攻击（xss）" class="headerlink" title="跨站脚本攻击（xss）"></a>跨站脚本攻击（xss）</h3><p>xss(crsoss site scripting)<br>XSS是常见的Web攻击技术之一.所谓的跨站脚本攻击指得是:恶意攻击者往Web页面里注入恶意Script代码，用户浏览这些网页时，就会执行其中的恶意代码，可对用户进行盗取cookie信息、会话劫持等各种攻击<br><a id="more"></a><br>解决方案:<br>1)输入过滤， 不要相信用户的输入，这样可以初步对XSS漏洞进行防御。上面的措施只在web端做了限制，攻击者通抓包工具如Fiddler还是可以绕过前端输入的限制，修改请求注入攻击脚本。<br>因此，后台服务器需要在接收到用户输入的数据后，对特殊危险字符进行过滤或者转义处理，然后再存储到数据库中<br>2）输出编码。服务器端输出到浏览器的数据，可以使用系统的安全函数来进行编码或转义来防范XSS攻击<br>3）HttpOnly Cookie。预防XSS攻击窃取用户cookie最有效的防御手段。Web应用程序在设置cookie时，将其属性设为HttpOnly，就可以避免该网页的cookie被客户端恶意JavaScript窃取，保护用户cookie信息<br>4）</p>
+<h3 id="跨站请求伪造"><a href="#跨站请求伪造" class="headerlink" title="跨站请求伪造"></a>跨站请求伪造</h3><p>CSRF(Cross Site Request Forgery)，即跨站请求伪造，是一种常见的Web攻击，但很多开发者对它很陌生。CSRF也是Web安全中最容易被忽略的一种 网站攻击<br>CSRF攻击的原理:CSRF攻击过程的受害者用户登录网站A，输入个人信息，在本地保存服务器生成的cookie。然后在A网站点击由攻击者构建一条恶意链接跳转到<br>B网站,然后B网站携带着的用户cookie信息去访问B网站.让A网站造成是用户自己访问的假相,从而来进行一些列的操作,常见的就是转账<br>1) 验证码。应用程序和用户进行交互过程中，特别是账户交易这种核心步骤，强制用户输入验证码，才能完成最终请求。在通常情况下，验证码够很好地遏制<br>2) Referer Check。HTTP Referer是header的一部分，当浏览器向web服务器发送请求时，一般会带上Referer信息告诉服务器是从哪个页面链接过来的，服务器籍此可以获得一些信息用于处理。可以通过检查请求的来源来防御CSRF攻击。正常请求的referer具有一定规律，如在提交表单的referer必定是在该页面发起的请求。所以通过检查http包头referer的值是不是这个页面，来判断是不是CSRF攻击。但在某些情况下如从https跳转到http，浏览器处于安全考虑，不会发送referer，服务器就无法进行check了。若与该网站同域的其他网站有XSS漏洞，那么攻击者可以在其他网站注入恶意脚本，受害者进入了此类同域的网址，也会遭受攻击。出于以上原因，无法完全依赖Referer Check作为防御CSRF的主要手段。但是可以通过Referer Check来监控CSRF攻击的发生 </p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p>SQL注入(SQL Injection)，应用程序在向后台数据库传递SQL(Structured Query Language，结构化查询语言)时，攻击者将SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令.<br>解决方案:<br>(1) 防止系统敏感信息泄露。设置php.ini选项display_errors=off，防止php脚本出错之后，在web页面输出敏感信息错误，让攻击者有机可乘。(2) 数据转义。设置php.ini选项magic_quotes_gpc=on，它会将提交的变量中所有的’(单引号)，”(双引号)，(反斜杠)，空白字符等都在前面自动加上\。或者采用mysql_real_escape()函数或addslashes()函数进行输入参数的转义。(3) 增加黑名单或者白名单验证。白名单验证一般指，检查用户输入是否是符合预期的类型、长度、数值范围或者其他格式标准。黑名单验证是指，若在用户输入中，包含明显的恶意内容则拒绝该条用户请求。在使用白名单验证时，一般会配合黑名单验证。 </p>
+<h3 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h3><p>上传漏洞在DVBBS6.0时代被黑客们利用的最为猖獗，利用上传漏洞可以直接得到WEBSHELL，危害等级超级高，现在的入侵中上传漏洞也是常见的漏洞。该漏洞允许用户上传任意文件可能会让攻击者注入危险内容或恶意代码，并在服务器上运行。 文件上传漏洞的原理：由于文件上传功能实现代码没有严格限制用户上传的文件后缀以及文件类型，导致允许攻击者向某个可通过 Web 访问的目录上传任意PHP文件，并能够将这些文件传递给 PHP 解释器，就可以在远程服务器上执行任意PHP脚本。<br>解决方案：<br>1)检查服务器是否判断了上传文件类型及后缀。<br>2) 定义上传文件类型白名单，即只允许白名单里面类型的文件上传。<br>3) 文件上传目录禁止执行脚本解析，避免攻击者进行二次攻击。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bind</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安全</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/21/前端安全性/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/08/21/throttle和debounce概念原理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">throttle和debounce概念原理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -236,9 +344,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
