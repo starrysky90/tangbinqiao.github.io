@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="TBQ的博客">
 <meta property="og:description" content="什么是reflow/repaint?浏览器大概工作流程：">
 <meta property="og:image" content="http://yoursite.com/img/render.png">
-<meta property="og:updated_time" content="2018-10-16T06:31:02.683Z">
+<meta property="og:updated_time" content="2018-10-16T06:42:32.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="reflow和repaint">
 <meta name="twitter:description" content="什么是reflow/repaint?浏览器大概工作流程：">
@@ -206,7 +206,7 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不好的写法</span></span><br><span class="line"><span class="keyword">var</span> left = <span class="number">10</span>,</span><br><span class="line">top = <span class="number">10</span>;</span><br><span class="line">el.style.left = left + <span class="string">"px"</span>;</span><br><span class="line">el.style.top  = top  + <span class="string">"px"</span>;</span><br><span class="line"><span class="comment">// 推荐写法</span></span><br><span class="line">el.className += <span class="string">" theclassname"</span>;</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>把 DOM 离线后修改。如：<br>1) 使用 documentFragment 对象在内存里操作 DOM<br>2) 先把 DOM 给 display:none (有一次 repaint)，然后你想怎么改就怎么改。比如修改 100 次，然后再把他显示出来<br>3) clone 一个 DOM 节点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下</p>
+<li><p>把 DOM 离线后修改。如：<br> 1) 使用 documentFragment 对象在内存里操作 DOM<br> 2) 先把 DOM 给 display:none (有一次 repaint)，然后你想怎么改就怎么改。比如修改 100 次，然后再把他显示出来<br> 3) clone 一个 DOM 节点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下</p>
 </li>
 <li><p>不要把 DOM 节点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性</p>
 </li>
