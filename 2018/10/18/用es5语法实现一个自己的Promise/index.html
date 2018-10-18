@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: mongoose | TBQ的博客</title>
+  <title>用es5语法实现一个自己的Promise | TBQ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TBQ的博客">
-<meta property="og:url" content="http://yoursite.com/tags/mongoose/index.html">
+  <meta name="description" content="众所周知javascript语言的一大特色就是异步，这既是它的优点，同时在某些情况下也带来了一些的问题。最大的问题之一，就是异步操作过多的时候，代码内会充斥着众多回调函数，乃至形成回调金字塔。为了解决回调函数带来的问题，Promise作为一种更优雅的异步解决方案被提出，最初只是一种实现接口规范，而到了es6，则是在语言层面就原生支持了Promise对象。">
+<meta name="keywords" content="promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用es5语法实现一个自己的Promise">
+<meta property="og:url" content="http://yoursite.com/2018/10/18/用es5语法实现一个自己的Promise/index.html">
 <meta property="og:site_name" content="TBQ的博客">
-<meta property="og:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta property="og:description" content="众所周知javascript语言的一大特色就是异步，这既是它的优点，同时在某些情况下也带来了一些的问题。最大的问题之一，就是异步操作过多的时候，代码内会充斥着众多回调函数，乃至形成回调金字塔。为了解决回调函数带来的问题，Promise作为一种更优雅的异步解决方案被提出，最初只是一种实现接口规范，而到了es6，则是在语言层面就原生支持了Promise对象。">
+<meta property="og:updated_time" content="2018-10-18T09:24:21.156Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TBQ的博客">
-<meta name="twitter:description" content="这是我的一些小小经验和积累，不对的地方还望大家指正，共同学习">
+<meta name="twitter:title" content="用es5语法实现一个自己的Promise">
+<meta name="twitter:description" content="众所周知javascript语言的一大特色就是异步，这既是它的优点，同时在某些情况下也带来了一些的问题。最大的问题之一，就是异步操作过多的时候，代码内会充斥着众多回调函数，乃至形成回调金字塔。为了解决回调函数带来的问题，Promise作为一种更优雅的异步解决方案被提出，最初只是一种实现接口规范，而到了es6，则是在语言层面就原生支持了Promise对象。">
   
     <link rel="alternative" href="/atom.xml" title="TBQ的博客" type="application/atom+xml">
   
@@ -156,60 +158,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-用es5语法实现一个自己的Promise" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/19/mongoose中connect和createConnection的区别/" class="archive-article-date">
-  	<time datetime="2018-09-19T06:51:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/19/mongoose中connect和createConnection的区别/">mongoose中connect和createConnection的区别</a>
+    <h1 class="article-title" itemprop="name">
+      用es5语法实现一个自己的Promise
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/18/用es5语法实现一个自己的Promise/" class="archive-article-date">
+  	<time datetime="2018-10-18T06:52:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>众所周知javascript语言的一大特色就是异步，这既是它的优点，同时在某些情况下也带来了一些的问题。最大的问题之一，就是异步操作过多的时候，代码内会充斥着众多回调函数，乃至形成回调金字塔。为了解决回调函数带来的问题，Promise作为一种更优雅的异步解决方案被提出，最初只是一种实现接口规范，而到了es6，则是在语言层面就原生支持了Promise对象。</p>
+<a id="more"></a>
+<p>最初接触Promise的时候，我觉得它是比较抽象并且令人困惑的，相信很多人也有同样的感觉。但是在后来的熟悉过程中，我慢慢体会到了它的优雅，并开始思考Promise对象实现的原理，最终用es5语法实现了一个具备基本功能的自己的Promise对象。在这篇文章中，会把自己实现的过程和思路循序渐进的记录一下，相信大家看完之后，也能够彻底理解Promise对象运行的原理，并在以后的开发中，能更熟练的使用它。</p>
+<h3 id="回顾promise的用法"><a href="#回顾promise的用法" class="headerlink" title="回顾promise的用法"></a>回顾promise的用法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn=<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'begin to execute!'</span>);</span><br><span class="line">  <span class="keyword">var</span> number=<span class="built_in">Math</span>.random();</span><br><span class="line">  <span class="keyword">if</span>(number&lt;=<span class="number">0.5</span>)&#123;</span><br><span class="line">    resolve(<span class="string">'less than 0.5'</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    reject(<span class="string">'greater than 0.5'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p=<span class="keyword">new</span> <span class="built_in">Promise</span>(fn);</span><br><span class="line">p.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'resolve: '</span>, data);</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'reject: '</span>, data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="实现最简版Promise功能"><a href="#实现最简版Promise功能" class="headerlink" title="实现最简版Promise功能"></a>实现最简版Promise功能</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyPromise</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.value;</span><br><span class="line">    <span class="keyword">this</span>.resolveFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">this</span>.rejectFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">    fn(<span class="keyword">this</span>.resolve.bind(<span class="keyword">this</span>), <span class="keyword">this</span>.reject.bind(<span class="keyword">this</span>))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.resolve = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">    self.value = val</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        self.resolveFunc(self.value)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.reject = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">    self.value = val </span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        self.rejectFunc(self.value)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">resolveFunc, rejectFunc</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.resolveFunc = resolveFunc </span><br><span class="line">    <span class="keyword">this</span>.rejectFunc = rejectFunc </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'begin to execute!'</span>)</span><br><span class="line">    <span class="keyword">var</span> number = <span class="built_in">Math</span>.random()</span><br><span class="line">    <span class="keyword">if</span>(number &lt;= <span class="number">0.5</span>)&#123;</span><br><span class="line">        resolve(<span class="string">'less than 0.5'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reject(<span class="string">'more than 0.5'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p =<span class="keyword">new</span> MyPromise(fn);</span><br><span class="line">p.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'resolve:'</span>, data)</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'reject:'</span>, data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="加入状态：-pending-fulfilled-rejected"><a href="#加入状态：-pending-fulfilled-rejected" class="headerlink" title="加入状态： pending, fulfilled, rejected"></a>加入状态： pending, fulfilled, rejected</h3><p>上一步， 初步实现了看起来似乎能够运行的MyPromise， 但是问题很多， 我们看一下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    resolve(<span class="string">"hello"</span>)</span><br><span class="line">    reject(<span class="string">"hello again"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(fn)</span><br><span class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'resolve:'</span>, data)</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'reject: '</span>, data)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//'resolve: hello'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> MyPromise(fn)</span><br><span class="line">p2.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'resolve: '</span> + data)</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'reject: '</span> + data)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//'resolve: hello' </span></span><br><span class="line"><span class="comment">// 'reject: hello again'</span></span><br></pre></td></tr></table></figure>
+<p>1是原生Promise，p2是我们自己写的，可以看出，当调用resolve之后再调用reject，p1只会执行resolve，我们的则是两个都执行。事实上在Promise规范当中，规定Promise只能从初始pending状态变到resolved或者rejected状态，是单向变化的，也就是说执行了resolve就不会再执行reject，反之亦然。</p>
+<p>为此，我们需要在MyPromise中加入状态，并在必要的地方进行判断，防止重复执行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyPromise</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.value;</span><br><span class="line">  <span class="keyword">this</span>.status = <span class="string">'pending'</span>;</span><br><span class="line">  <span class="keyword">this</span>.resolveFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  <span class="keyword">this</span>.rejectFunc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  fn(<span class="keyword">this</span>.resolve.bind(<span class="keyword">this</span>), <span class="keyword">this</span>.reject.bind(<span class="keyword">this</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.resolve = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'pending'</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.status = <span class="string">'resolved'</span>;</span><br><span class="line">    <span class="keyword">this</span>.value=val;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      self.resolveFunc(self.value);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.reject = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.status == <span class="string">'pending'</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.status = <span class="string">'rejected'</span>;</span><br><span class="line">    <span class="keyword">this</span>.value=val;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      self.rejectFunc(self.value);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyPromise.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">resolveFunc, rejectFunc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.resolveFunc = resolveFunc;</span><br><span class="line">  <span class="keyword">this</span>.rejectFunc = rejectFunc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样，再次运行上面的实例，就不会出现resolve和reject都执行的情况了。</p>
+<h3 id="链式调用"><a href="#链式调用" class="headerlink" title="链式调用"></a>链式调用</h3><p>在Promise的使用中，我们一定注意到，是可以链式调用的:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    resolve(<span class="string">"hello"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(fn)</span><br><span class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello again"</span></span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 'hello'</span></span><br><span class="line"><span class="comment">// 'hello again'</span></span><br></pre></td></tr></table></figure>
+<p>很显然，要实现链式调用，then方法的返回值也必须是一个Promise对象，这样才能再次在后面调用then。因此我们修改MyPromise的then方法:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MyPromise.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">resolveFunc, rejectFunc</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve_next, reject_next</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">resolveFuncWrap</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = resolveFunc(self.value)</span><br><span class="line">            resolve_next(result)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">rejectFuncWrap</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = rejectFunc(self.value)</span><br><span class="line">            resolve_next(result)</span><br><span class="line">        &#125;</span><br><span class="line">        self.resolveFunc = resolveFuncWrap</span><br><span class="line">        self.rejectFunc = rejectFuncWrap </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里可以看出，then返回了一个MyPromise对象。在这个MyPromise当中，包裹了一个函数，这个函数会立即执行，主要做的事情，就是对resolveFunc和rejectFunc进行封装，然后再赋值给前一个MyPromise的resolveFunc和rejectFunc。这里难点是看懂封装的目的。</p>
+<p>然而我们再回去观察Promise规范，会发现链式调用的情况也分两种。一种情况下，前一个Promise的resolve或者reject的返回值是普通的对象，这种情况下我们目前的MyPromise可以正确处理。但还有一种情况，就是前一个Promise的resolve或者reject执行后，返回的值本身又是一个Promise对象，举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn=<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">  resolve(<span class="string">'hello'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1=<span class="keyword">new</span> <span class="built_in">Promise</span>(fn);</span><br><span class="line">p1.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'hello again'</span>;</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> innerData=<span class="string">'hello third time!'</span>;</span><br><span class="line">    resolve(innerData);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//'hello'</span></span><br><span class="line"><span class="comment">//'hello again'</span></span><br><span class="line"><span class="comment">//'hello third time!'</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子当中出现了两次链式调用，第一个then返回的是一个’hello again’字符串，在第二个then的resolve中会打印处理。然后我们注意第二个then当中，返回的是一个Promise对象，调用了resolve。那么问题来了，这个resolve哪里来呢？答案就是在第三个then当中定义！这个例子中第三个then定义的resolve也比较简单，就是直接打印传给resolve的参数。</p>
+<p>因此，这里我们的MyPromise也需要修改，针对前一个resolve或者reject的返回值做判断，看是不是Promise对象，如果是，就做不同的处理，修改的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">MyPromise.prototype.then = <span class="function"><span class="keyword">function</span>(<span class="params">resolveFunc, rejectFunc</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self =  <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MyPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve_next, reject_next</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">resolveFuncWrap</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = resolveFunc(self.value)</span><br><span class="line">            <span class="keyword">if</span>(result &amp;&amp; <span class="keyword">typeof</span> result.then === <span class="string">"function"</span>)&#123;</span><br><span class="line">                result.then(resolve_next, reject_next)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                resolve_next(result)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">rejectFuncWrap</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = rejectFunc(self.value)</span><br><span class="line">            <span class="keyword">if</span>(result &amp;&amp; <span class="keyword">typeof</span> result.then ===<span class="string">"function"</span>)&#123;</span><br><span class="line">                result.then(resolve_next, reject_next)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                resolve_next(result)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        self.resolveFunc = resolveFuncWrap </span><br><span class="line">        self.rejectFunc = rejectFuncWrap </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到在代码中，对于resolveFunc或者rejectFunc的返回值,我们会判断是否含有.then方法，如果含有，就认为是一个MyPromise对象，从而调用该MyPromise的then方法，将resolve_next和reject_next传给它。否则，正常对象，result就作为参数传给resolve_next。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mongoose</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/18/用es5语法实现一个自己的Promise/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/10/17/exec和match的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">exec和match的区别</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -232,9 +362,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
